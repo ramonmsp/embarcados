@@ -151,8 +151,7 @@ void L3G::enableDefault(void)
 }
 
 // Writes a gyro register
-void L3G::writeReg(byte reg, byte value)
-{
+void L3G::writeReg(byte reg, byte value){
   Wire.beginTransmission(address);
   Wire.write(reg);
   Wire.write(value);

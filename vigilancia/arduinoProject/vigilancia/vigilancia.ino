@@ -20,20 +20,27 @@ reading of 345 corresponds to 345 * 8.75 = 3020 mdps = 3.02 dps.
 L3G gyro = L3G();
 ADXL345 acel = ADXL345();
 
+struct Eixos {
+  int acelX, acelY, acelZ;
+  
+};
+Eixos eixos;
+
 void setup() {
   Serial.begin(9600);
   Wire.begin();
 
-  if (!gyro.init())
-  {
-    Serial.println("Failed to autodetect gyro type!");
+  if (!gyro.init()) {
+    Serial.println("Verificar ligação do sensor!");
     while (1);
   }
 
   gyro.enableDefault();
+  acel.powerOn();
 }
 
 void loop() {
+  
   gyro.read();
 
   Serial.print("G ");
@@ -44,5 +51,17 @@ void loop() {
   Serial.print(" Z: ");
   Serial.println((int)gyro.g.z);
 
-  delay(100);
+  delay(50);
+  
+  acel.readAccel(&eixos.acelX, &eixos.acelY, &eixos.acelZ);
+  
+  Serial.print("A ");
+  Serial.print("X:  ");
+  Serial.print(eixos.acelX);
+  Serial.print(" Y:  ");
+  Serial.print(eixos.acelY);
+  Serial.print(" Z:  ");
+  Serial.println(eixos.acelZ);
+
+  delay(500);
 }
