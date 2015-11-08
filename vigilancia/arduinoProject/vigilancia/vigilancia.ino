@@ -26,6 +26,11 @@ struct Eixos {
 };
 Eixos eixos;
 
+struct Gyro {
+  int gyroX, gyroY, gyroZ;
+};
+Gyro gyros;
+
 void setup() {
   Serial.begin(9600);
   Wire.begin();
@@ -38,30 +43,46 @@ void setup() {
   gyro.enableDefault();
   acel.powerOn();
 }
+void enviarEixosGyro() {
+  int tamGyro = sizeof(gyros);
+  char buffGyro[tamGyro];
 
+  memcpy(&buffGyro, &gyros, tamGyro);
+  Serial.write('K');
+  Serial.write((uint8_t*)&buffGyro, tamGyro);
+  Serial.write('L');
+
+
+}
+void enviarEixosAcel() {
+  int tamAcel = sizeof(eixos);
+  char buffAcel[tamAcel];
+  
+  
+  
+  memcpy(&buffAcel, &eixos, tamAcel);
+  Serial.write('I');
+  Serial.write((uint8_t*)&buffAcel, tamAcel);
+  Serial.write('F');
+  
+}
+
+void setStruct () {
+    gyros.gyroX = (int)gyro.g.x;
+    gyros.gyroY = (int)gyro.g.y;
+    gyros.gyroZ = (int)gyro.g.z;
+}
 void loop() {
   
   gyro.read();
-
-  Serial.print("G ");
-  Serial.print("X: ");
-  Serial.print((int)gyro.g.x);
-  Serial.print(" Y: ");
-  Serial.print((int)gyro.g.y);
-  Serial.print(" Z: ");
-  Serial.println((int)gyro.g.z);
-
-  delay(50);
+  setStruct();
+  enviarEixosGyro();
+  
+  delay(50);  
   
   acel.readAccel(&eixos.acelX, &eixos.acelY, &eixos.acelZ);
-  
-  Serial.print("A ");
-  Serial.print("X:  ");
-  Serial.print(eixos.acelX);
-  Serial.print(" Y:  ");
-  Serial.print(eixos.acelY);
-  Serial.print(" Z:  ");
-  Serial.println(eixos.acelZ);
+  enviarEixosAcel();
 
-  delay(500);
+  
+  delay(200);
 }
