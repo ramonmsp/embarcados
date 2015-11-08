@@ -34,7 +34,8 @@ Gyro gyros;
 void setup() {
   Serial.begin(9600);
   Wire.begin();
-
+  
+// se giroscopio foi iniciado
   if (!gyro.init()) {
     Serial.println("Verificar ligação do sensor!");
     while (1);
