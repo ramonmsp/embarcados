@@ -46,20 +46,16 @@ void setup() {
 void enviarEixosGyro() {
   int tamGyro = sizeof(gyros);
   char buffGyro[tamGyro];
-
   memcpy(&buffGyro, &gyros, tamGyro);
   Serial.write('K');
   Serial.write((uint8_t*)&buffGyro, tamGyro);
   Serial.write('L');
-
+  
 
 }
 void enviarEixosAcel() {
   int tamAcel = sizeof(eixos);
   char buffAcel[tamAcel];
-  
-  
-  
   memcpy(&buffAcel, &eixos, tamAcel);
   Serial.write('I');
   Serial.write((uint8_t*)&buffAcel, tamAcel);
@@ -67,7 +63,7 @@ void enviarEixosAcel() {
   
 }
 
-void setStruct () {
+void setStruct() {
     gyros.gyroX = (int)gyro.g.x;
     gyros.gyroY = (int)gyro.g.y;
     gyros.gyroZ = (int)gyro.g.z;
