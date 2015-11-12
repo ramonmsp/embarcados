@@ -20,16 +20,11 @@ reading of 345 corresponds to 345 * 8.75 = 3020 mdps = 3.02 dps.
 L3G gyro = L3G();
 ADXL345 acel = ADXL345();
 
-struct Eixos {
-  int acelX, acelY, acelZ;
+struct Leitura {
+  int acelX, acelY, acelZ, gyroX, gyroY, gyroZ, stateTap;
   
 };
-Eixos eixos;
-
-struct Gyro {
-  int gyroX, gyroY, gyroZ;
-};
-Gyro gyros;
+Leitura leitura;
 
 void setup() {
   Serial.begin(9600);
@@ -44,42 +39,40 @@ void setup() {
   gyro.enableDefault();
   acel.powerOn();
 }
-void enviarEixosGyro() {
-  int tamGyro = sizeof(gyros);
-  char buffGyro[tamGyro];
-  memcpy(&buffGyro, &gyros, tamGyro);
-  Serial.write('K');
-  Serial.write((uint8_t*)&buffGyro, tamGyro);
-  Serial.write('L');
-  
-
-}
-void enviarEixosAcel() {
-  int tamAcel = sizeof(eixos);
-  char buffAcel[tamAcel];
-  memcpy(&buffAcel, &eixos, tamAcel);
+void enviarLeitura() {
+  int tam = sizeof(leitura);
+  char buffGyro[tam];
+  memcpy(&buffGyro, &leitura, tam);
   Serial.write('I');
-  Serial.write((uint8_t*)&buffAcel, tamAcel);
+  Serial.write((uint8_t*)&buffGyro, tam);
   Serial.write('F');
-  
 }
 
 void setStruct() {
-    gyros.gyroX = (int)gyro.g.x;
-    gyros.gyroY = (int)gyro.g.y;
-    gyros.gyroZ = (int)gyro.g.z;
+    leitura.gyroX = (int)gyro.g.x;
+    leitura.gyroY = (int)gyro.g.y;
+    leitura.gyroZ = (int)gyro.g.z;
 }
 void loop() {
-  
+  byte interrupts = acel.getInterruptSource();
+     
   gyro.read();
   setStruct();
-  enviarEixosGyro();
   
-  delay(50);  
   
-  acel.readAccel(&eixos.acelX, &eixos.acelY, &eixos.acelZ);
-  enviarEixosAcel();
+  acel.readAccel(&leitura.acelX, &leitura.acelY, &leitura.acelZ);
 
   
+  //double tap
+  if(acel.triggered(interrupts, ADXL345_INT_DOUBLE_TAP_BIT)){
+    leitura.stateTap = 2;
+  }else if(acel.triggered(interrupts, ADXL345_INT_SINGLE_TAP_BIT)){
+    leitura.stateTap = 1;
+     //add code here to do when a tap is sensed
+  } else{
+    leitura.stateTap = 0;
+  }
+
+  enviarLeitura();
   delay(200);
 }

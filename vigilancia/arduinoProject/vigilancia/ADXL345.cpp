@@ -424,6 +424,9 @@ void ADXL345::setInactivityY(bool state) {
 void ADXL345::setInactivityZ(bool state) {  
   setRegisterBit(ADXL345_ACT_INACT_CTL, 0, state); 
 }
+bool ADXL345::triggered(byte interrupts, int mask){
+  return ((interrupts >> mask) & 1);
+}
 
 bool ADXL345::isActivityAc() { 
   return getRegisterBit(ADXL345_ACT_INACT_CTL, 7); 

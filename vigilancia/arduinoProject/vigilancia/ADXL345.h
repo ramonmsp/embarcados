@@ -157,6 +157,7 @@ public:
   void setInactivityX(bool state);
   void setInactivityY(bool state);
   void setInactivityZ(bool state);
+  bool triggered(byte interrupts, int mask);
 
   bool isActivitySourceOnX();
   bool isActivitySourceOnY();
