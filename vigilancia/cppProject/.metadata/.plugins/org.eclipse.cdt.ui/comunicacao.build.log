@@ -1,0 +1,13 @@
+11:59:06 **** Build of configuration Debug for project comunicacao ****
+make all 
+Building file: ../src/Comunicacao.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Comunicacao.d" -MT"src/Comunicacao.d" -o "src/Comunicacao.o" "../src/Comunicacao.cpp"
+../src/Comunicacao.cpp:8:25: fatal error: Comunicacao.h: No such file or directory
+ #include "Comunicacao.h"
+                         ^
+compilation terminated.
+make: *** [src/Comunicacao.o] Error 1
+
+11:59:07 Build Finished (took 712ms)
+
