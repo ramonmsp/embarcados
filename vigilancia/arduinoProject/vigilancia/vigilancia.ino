@@ -55,6 +55,7 @@ void setStruct() {
 }
 void loop() {
   byte interrupts = acel.getInterruptSource();
+  leitura.stateTap = 0;
      
   gyro.read();
   setStruct();
@@ -63,16 +64,11 @@ void loop() {
   acel.readAccel(&leitura.acelX, &leitura.acelY, &leitura.acelZ);
 
   
-  //double tap
-  if(acel.triggered(interrupts, ADXL345_INT_DOUBLE_TAP_BIT)){
-    leitura.stateTap = 2;
-  }else if(acel.triggered(interrupts, ADXL345_INT_SINGLE_TAP_BIT)){
+  if(acel.triggered(interrupts, ADXL345_INT_SINGLE_TAP_BIT)){
     leitura.stateTap = 1;
-     //add code here to do when a tap is sensed
-  } else{
-    leitura.stateTap = 0;
   }
-
+ 
   enviarLeitura();
-  delay(200);
+ 
+  delay(100);
 }
