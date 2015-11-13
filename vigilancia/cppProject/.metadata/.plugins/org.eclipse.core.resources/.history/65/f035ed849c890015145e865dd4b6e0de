@@ -23,7 +23,7 @@ struct Leitura { //struct (estrutura de dados) e usado pra dar mais performance,
 int main(int argc, char **argv) {
 
 	//criar uma instancia da classe de comunicacao
-	Comunicacao com = Comunicacao("/dev/ttyACM1"); //verificar a porta correta na interface do arduino, no linux sera diferente
+	Comunicacao com = Comunicacao("/dev/ttyUSB1"); //verificar a porta correta na interface do arduino, no linux sera diferente
 
 	//iniciou a comunicacao
 	if (com.iniciar() == EXIT_SUCCESS) {  //se foi iniciado com sucesso
@@ -48,7 +48,6 @@ int main(int argc, char **argv) {
 						cout << "Z = " << eixos.gyroZ << endl;
 						cout << "tap: " << endl;
 						cout << "Vibra:  " << eixos.stateTap << endl;
-
 					}
 				}
 			}
