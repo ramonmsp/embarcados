@@ -221,3 +221,38 @@ make: Nothing to be done for `all'.
 22:08:11 **** Incremental Build of configuration Debug for project driverVigilancia ****
 make all 
 make: Nothing to be done for `all'.
+22:26:49 **** Incremental Build of configuration Debug for project driverVigilancia ****
+make all 
+Building file: ../src/Executor.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Executor.d" -MT"src/Executor.d" -o "src/Executor.o" "../src/Executor.cpp"
+../src/Executor.cpp: In function ‘int main(int, char**)’:
+../src/Executor.cpp:26:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  Comunicacao com = Comunicacao("/dev/ttyACM1"); //verificar a porta correta na interface do arduino, no linux sera diferente
+                                              ^
+Finished building: ../src/Executor.cpp
+ 
+Building target: driverVigilancia
+Invoking: GCC C++ Linker
+g++  -o "driverVigilancia"  ./src/Comunicacao.o ./src/Executor.o ./src/Extern.o   
+Finished building target: driverVigilancia
+ 
+22:28:56 **** Incremental Build of configuration Debug for project driverVigilancia ****
+make all 
+Building file: ../src/Executor.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Executor.d" -MT"src/Executor.d" -o "src/Executor.o" "../src/Executor.cpp"
+../src/Executor.cpp: In function ‘int main(int, char**)’:
+../src/Executor.cpp:26:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  Comunicacao com = Comunicacao("/dev/ttyACM1"); //verificar a porta correta na interface do arduino, no linux sera diferente
+                                              ^
+Finished building: ../src/Executor.cpp
+ 
+Building target: driverVigilancia
+Invoking: GCC C++ Linker
+g++  -o "driverVigilancia"  ./src/Comunicacao.o ./src/Executor.o ./src/Extern.o   
+Finished building target: driverVigilancia
+ 
+22:29:52 **** Incremental Build of configuration Debug for project driverVigilancia ****
+make all 
+make: Nothing to be done for `all'.

@@ -38,6 +38,7 @@ int main(int argc, char **argv) {
 				if (resultado == EXIT_SUCCESS) {  //se leu os dados ok
 					resultado = com.ler((char*) &cf, sizeof(cf)); //o resultado sera a leitura do f
 					if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai imprimir
+
 //						cout << "Acelerômetro" << endl;
 //						cout << "X = " << eixos.acelX << endl;
 //						cout << "Y = " << eixos.acelY << endl;
@@ -47,6 +48,7 @@ int main(int argc, char **argv) {
 //						cout << "Y = " << eixos.gyroY << endl;
 //						cout << "Z = " << eixos.gyroZ << endl;
 //						cout << "Vibra:  " << eixos.stateTap << endl;
+
 					}
 				}
 			}
