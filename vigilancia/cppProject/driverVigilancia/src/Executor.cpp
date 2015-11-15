@@ -20,18 +20,10 @@ struct Leitura { //struct (estrutura de dados) e usado pra dar mais performance,
 	//int giroX, giroY, giroZ;
 };
 
-int verificaAcel(short x, short y, short z){
-	int saida =0;
-	if((x < 15 || x>35) && (y < -15 || y > 5) && (z < -270 || z > -250)){
-		saida = 1;
-	}
-	return saida;
-};
-
 int main(int argc, char **argv) {
 
 	//criar uma instancia da classe de comunicacao
-	Comunicacao com = Comunicacao("/dev/ttyACM0"); //verificar a porta correta na interface do arduino, no linux sera diferente
+	Comunicacao com = Comunicacao("/dev/ttyUSB3"); //verificar a porta correta na interface do arduino, no linux sera diferente
 
 	//iniciou a comunicacao
 	if (com.iniciar() == EXIT_SUCCESS) {  //se foi iniciado com sucesso
@@ -46,9 +38,9 @@ while(true){
 					resultado = com.ler((char*) &cf, sizeof(cf)); //o resultado sera a leitura do f
 					if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai imprimir
 
-						//verificar se mecheu
-						if(verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1){
-							cout<< "MECHEU"<<endl;
+						//verificar se mexeu
+						if(com.verificaAcel(eixos.acelX, eixos.acelY, eixos.acelZ) == 1){
+							cout<< "MEXEU"<<endl;
 						}else{
 						//verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ);
 

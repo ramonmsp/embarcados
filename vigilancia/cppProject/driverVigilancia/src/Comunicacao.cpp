@@ -12,6 +12,13 @@
 #include <errno.h>
 #endif
 
+#define MIN_X_ACEL = 15;
+#define MAX_X_ACEL = 35;
+#define MIN_Y_ACEL = -15;
+#define MAX_Y_ACEL = 5;
+#define MIN_Z_ACEL = -270;
+#define MAX_Z_ACEL = -250;
+
 Comunicacao::Comunicacao(char* porta){
 	hPorta = 0;
 	this->porta = porta;
@@ -90,7 +97,13 @@ int Comunicacao::finalizar(){
 	return EXIT_SUCCESS;
 }
 
-
+short Comunicacao::verificaAcel(short x, short y, short z){
+	short saida =0;
+	if((x < 15 || x>35) && (y < -15 || y > 5) && (z < -270 || z > -250)){
+		saida = 1;
+	}
+	return saida;
+}
 
 
 

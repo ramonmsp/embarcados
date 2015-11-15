@@ -67,7 +67,8 @@ void loop() {
   if(acel.triggered(interrupts, ADXL345_INT_SINGLE_TAP_BIT)){
     leitura.stateTap = 1;
   }
- 
+
+ //Serial.print(leitura.stateTap); 
   enviarLeitura();
  
   delay(300);
