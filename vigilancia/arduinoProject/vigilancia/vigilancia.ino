@@ -70,5 +70,5 @@ void loop() {
  
   enviarLeitura();
  
-  delay(100);
+  delay(300);
 }

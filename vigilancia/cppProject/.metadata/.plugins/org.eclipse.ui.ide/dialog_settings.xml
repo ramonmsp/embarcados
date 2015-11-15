@@ -5,6 +5,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos Embarcados/ProjetosCpp/I Unidade"/>
 			<item value="/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/cppProject"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

@@ -1,0 +1,26 @@
+package br.edu.ifba.embarcados.javaapp;
+
+import br.edu.ifba.embarcados.javaapp.asincexec.IListenerAcelerometro;
+
+public class ListenerAcelerometro implements IListenerAcelerometro{
+	int xComp=100;
+	
+	@Override
+	public void notificarMovimento(int x, int y, int z) {
+		
+		if(x<xComp)
+			System.out.println("Mecheu");
+		else{
+		System.out.println("x: "+x);
+		System.out.println("y: "+y);
+		System.out.println("z: "+z);
+		}
+	}
+
+	@Override
+	public void notificarVibracao() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
