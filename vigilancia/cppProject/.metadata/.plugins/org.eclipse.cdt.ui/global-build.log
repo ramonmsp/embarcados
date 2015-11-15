@@ -36,3 +36,6 @@ Finished building target: driverVigilancia
 16:54:36 **** Incremental Build of configuration Debug for project driverVigilancia ****
 make all 
 make: Nothing to be done for `all'.
+17:24:17 **** Incremental Build of configuration Debug for project driverVigilancia ****
+make all 
+make: Nothing to be done for `all'.

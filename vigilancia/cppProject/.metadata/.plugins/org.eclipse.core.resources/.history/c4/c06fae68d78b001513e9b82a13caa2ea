@@ -22,7 +22,9 @@ struct Leitura { //struct (estrutura de dados) e usado pra dar mais performance,
 
 int verificaAcel(short x, short y, short z){
 	int saida =0;
-	if((x < 15 || x>35) && (y < -15 || y > 5) && (z < -270 || z > -250)){
+	if((x < 15 || x>35) &&
+			(y < -15 || y > 5) &&
+			(z < -270 || z > -250)){
 		saida = 1;
 	}
 	return saida;
