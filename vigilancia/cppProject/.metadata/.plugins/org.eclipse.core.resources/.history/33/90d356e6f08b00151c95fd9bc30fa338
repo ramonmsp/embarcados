@@ -28,14 +28,6 @@ int verificaAcel(short x, short y, short z){
 	return saida;
 };
 
-int verificaGiro(short x, short y, short z){
-	int saida =0;
-	if((x < -100 || x>200) && (y < -100 || y > 400) && (z < -200 || z > 250)){
-		saida = 1;
-	}
-	return saida;
-};
-
 int main(int argc, char **argv) {
 
 	//criar uma instancia da classe de comunicacao
@@ -55,7 +47,7 @@ while(true){
 					if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai imprimir
 
 						//verificar se mecheu
-						if((verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  || (verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ))){
+						if(verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1){
 							cout<< "MECHEU"<<endl;
 						}else{
 						//verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ);

@@ -55,7 +55,7 @@ while(true){
 					if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai imprimir
 
 						//verificar se mecheu
-						if((verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  || (verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ))){
+						if(verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1){
 							cout<< "MECHEU"<<endl;
 						}else{
 						//verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ);
