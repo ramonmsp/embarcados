@@ -47,6 +47,9 @@ public:
 
 	//finaliza o uso da porta serial
 	int finalizar();
+
+	//verifica alteração no acel
+	short verificaAcel(short x, short y, short z);
 };
 
 #endif /* COMUNICACAO_H_ */

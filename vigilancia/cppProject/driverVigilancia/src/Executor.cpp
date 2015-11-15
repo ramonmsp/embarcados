@@ -36,6 +36,7 @@ int verificaGiro(short x, short y, short z){
 	return saida;
 };
 
+
 int main(int argc, char **argv) {
 
 	//criar uma instancia da classe de comunicacao
@@ -54,9 +55,11 @@ while(true){
 					resultado = com.ler((char*) &cf, sizeof(cf)); //o resultado sera a leitura do f
 					if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai imprimir
 
+
 						//verificar se mecheu
 						if((verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  || (verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ))){
 							cout<< "MECHEU"<<endl;
+
 						}else{
 						//verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ);
 
@@ -74,7 +77,7 @@ while(true){
 					}
 				}
 			}
-			Sleep(300);//pra n ficar o tempo todo batendo no arduino, ele vai esperar o mesmo tempo q o arduino leva pra enviar
+			Sleep(50);//pra n ficar o tempo todo batendo no arduino, ele vai esperar o mesmo tempo q o arduino leva pra enviar
 		}
 	}
 
