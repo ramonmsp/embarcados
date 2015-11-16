@@ -126,13 +126,13 @@ void Comunicacao::setPrimeiroAcel(short X, short Y, short Z){
 };
 
 void Comunicacao::setPrimeiroGiro(short X, short Y, short Z){
-	primMaiorGiroX = X+50;
-	primMaiorGiroY = Y+50;
-	primMaiorGiroZ = Z+50;
+	primMaiorGiroX = X+30;
+	primMaiorGiroY = Y+30;
+	primMaiorGiroZ = Z+30;
 
-	primMenorGiroX = X-50;
-	primMenorGiroY = Y-50;
-	primMenorGiroZ = Z-50;
+	primMenorGiroX = X-30;
+	primMenorGiroY = Y-30;
+	primMenorGiroZ = Z-30;
 };
 
 
