@@ -20,25 +20,9 @@ struct Leitura { //struct (estrutura de dados) e usado pra dar mais performance,
 	//int giroX, giroY, giroZ;
 };
 
-int verificaAcel(short x, short y, short z){
-	int saida =0;
-	if((x < 15 || x>35) && (y < -15 || y > 5) && (z < -270 || z > -250)){
-		saida = 1;
-	}
-	return saida;
-};
-
-int verificaGiro(short x, short y, short z){
-	int saida =0;
-	if((x < -100 || x>200) && (y < -100 || y > 400) && (z < -200 || z > 250)){
-		saida = 1;
-	}
-	return saida;
-};
-
-
 int main(int argc, char **argv) {
-
+	short primAcelX, primAcelY, primAcelZ, primGiroX, primGiroY, primGiroZ;
+	bool flag = true;
 	//criar uma instancia da classe de comunicacao
 	Comunicacao com = Comunicacao("/dev/ttyACM0"); //verificar a porta correta na interface do arduino, no linux sera diferente
 
@@ -54,16 +38,18 @@ while(true){
 				if (resultado == EXIT_SUCCESS) {  //se leu os dados ok
 					resultado = com.ler((char*) &cf, sizeof(cf)); //o resultado sera a leitura do f
 					if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai imprimir
+						if(flag){
+							com.setPrimeiroAcel(eixos.acelX, eixos.acelY, eixos.acelZ);
+							com.setPrimeiroGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ);
+							flag=false;
+							resultado = EXIT_SUCCESS;
+						}
 
-
-						//verificar se mecheu
-//						if((verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  ||
-//								(verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ) == 1)){
-//							cout<< "MECHEU"<<endl;
-
-//						}else{
-
-
+						//verificar se mexeu
+						if((com.verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  ||
+								(com.verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ))){
+							cout<< "MEXEU"<<endl;
+					}else{
 						cout << "Acelerômetro" << endl;
 						cout << "X = " << eixos.acelX << endl;
 						cout << "Y = " << eixos.acelY << endl;
@@ -76,11 +62,10 @@ while(true){
 						}
 					}
 				}
-//			}
+			}
 			Sleep(50);//pra n ficar o tempo todo batendo no arduino, ele vai esperar o mesmo tempo q o arduino leva pra enviar
 		}
 	}
-
 
 	return EXIT_SUCCESS;
 }

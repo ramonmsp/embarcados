@@ -49,10 +49,16 @@ public:
 	int finalizar();
 
 	//verifica alteração no acel
+
 	short verificaAcel(short x, short y, short z);
 
 	//verifica alteração no gyro
 	short verificaGiro(short x, short y, short z);
+
+	//Captura o primeiro valor de entrada
+	void setPrimeiroAcel(short X, short Y, short Z);
+
+	void setPrimeiroGiro(short X, short Y, short Z);
 };
 
 #endif /* COMUNICACAO_H_ */

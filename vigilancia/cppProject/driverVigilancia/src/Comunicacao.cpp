@@ -19,6 +19,9 @@
 #define MIN_Z_ACEL = -270;
 #define MAX_Z_ACEL = -250;
 
+short primMaiorAcelX, primMaiorAcelY, primMaiorAcelZ, primMaiorGiroX, primMaiorGiroY, primMaiorGiroZ;
+short primMenorAcelX, primMenorAcelY, primMenorAcelZ, primMenorGiroX, primMenorGiroY, primMenorGiroZ;
+
 Comunicacao::Comunicacao(char* porta){
 	hPorta = 0;
 	this->porta = porta;
@@ -98,20 +101,46 @@ int Comunicacao::finalizar(){
 }
 
 short Comunicacao::verificaAcel(short x, short y, short z){
-	short saida =0;
-	if((x < 15 || x>35) && (y < -15 || y > 5) && (z < -270 || z > -250)){
+	int saida =0;
+	if((x < primMenorAcelX || x > primMaiorAcelX) &&
+			(y < primMenorAcelY || y > primMaiorAcelY) &&
+			(z < primMenorAcelZ || z > primMaiorAcelZ)){
 		saida = 1;
 	}
 	return saida;
 }
 
+
 short Comunicacao::verificaGiro(short x, short y, short z){
 	short saida =0;
-	if((x < -100 || x>200) && (y < -100 || y > 400) && (z < -200 || z > 250)){
+	if((x < primMenorGiroX || x > primMaiorGiroX) &&
+			(y < primMenorGiroY || y > primMaiorGiroY) &&
+			(z < primMenorGiroZ || z > primMaiorGiroZ)){
 		saida = 1;
 	}
 	return saida;
-}
+
+};
+void Comunicacao::setPrimeiroAcel(short X, short Y, short Z){
+	primMaiorAcelX = X+30;
+	primMaiorAcelY = Y+30;
+	primMaiorAcelZ = Z+30;
+
+	primMenorAcelX = X-30;
+	primMenorAcelY = Y-30;
+	primMenorAcelZ = Z-30;
+};
+
+void Comunicacao::setPrimeiroGiro(short X, short Y, short Z){
+	primMaiorGiroX = X+30;
+	primMaiorGiroY = Y+30;
+	primMaiorGiroZ = Z+30;
+
+	primMenorGiroX = X-30;
+	primMenorGiroY = Y-30;
+	primMenorGiroZ = Z-30;
+};
+
 
 
 

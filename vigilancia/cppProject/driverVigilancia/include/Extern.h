@@ -17,6 +17,11 @@ int ler();
 int getAcelX();
 int getAcelY();
 int getAcelZ();
+
+int getGiroX();
+int getGiroY();
+int getGiroZ();
+
 int finalizar();
 
 #ifdef __cplusplus
