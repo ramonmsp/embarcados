@@ -57,11 +57,11 @@ while(true){
 
 
 						//verificar se mecheu
-//						if((verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  ||
-//								(verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ) == 1)){
-//							cout<< "MECHEU"<<endl;
+						if((verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  || (verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ))){
+							cout<< "MECHEU"<<endl;
 
-//						}else{
+						}else{
+						//verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ);
 
 
 						cout << "Acelerômetro" << endl;
@@ -76,7 +76,7 @@ while(true){
 						}
 					}
 				}
-//			}
+			}
 			Sleep(50);//pra n ficar o tempo todo batendo no arduino, ele vai esperar o mesmo tempo q o arduino leva pra enviar
 		}
 	}

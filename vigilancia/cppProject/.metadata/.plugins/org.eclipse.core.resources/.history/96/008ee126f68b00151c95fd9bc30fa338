@@ -105,13 +105,7 @@ short Comunicacao::verificaAcel(short x, short y, short z){
 	return saida;
 }
 
-short Comunicacao::verificaGiro(short x, short y, short z){
-	short saida =0;
-	if((x < -100 || x>200) && (y < -100 || y > 400) && (z < -200 || z > 250)){
-		saida = 1;
-	}
-	return saida;
-}
+
 
 
 
