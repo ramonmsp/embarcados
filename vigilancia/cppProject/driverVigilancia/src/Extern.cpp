@@ -47,7 +47,8 @@ int ler() {
 				}
 				resultado = EXIT_SUCCESS;
 				if((com.verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  ||
-					(com.verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ) == 1)){
+					(com.verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ) == 1) ||
+					(com.getTap(eixos.stateTap))){
 							resultado = EXIT_FAILURE;
 				}
 			}

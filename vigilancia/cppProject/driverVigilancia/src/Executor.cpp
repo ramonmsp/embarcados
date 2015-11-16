@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 	short primAcelX, primAcelY, primAcelZ, primGiroX, primGiroY, primGiroZ;
 	bool flag = true;
 	//criar uma instancia da classe de comunicacao
-	Comunicacao com = Comunicacao("/dev/ttyUSB3"); //verificar a porta correta na interface do arduino, no linux sera diferente
+	Comunicacao com = Comunicacao("/dev/ttyUSB1"); //verificar a porta correta na interface do arduino, no linux sera diferente
 
 	//iniciou a comunicacao
 	if (com.iniciar() == EXIT_SUCCESS) {  //se foi iniciado com sucesso
@@ -47,7 +47,8 @@ while(true){
 
 						//verificar se mexeu
 						if((com.verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  ||
-								(com.verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ))){
+								(com.verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ))
+								|| com.getTap(eixos.stateTap)){
 							cout<< "MEXEU"<<endl;
 					}else{
 						cout << "Acelerômetro" << endl;

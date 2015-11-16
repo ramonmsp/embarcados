@@ -1,6 +1,6 @@
-23:05:11 **** Incremental Build of configuration Debug for project driverVigilancia ****
+08:13:21 **** Incremental Build of configuration Debug for project driverVigilancia ****
 make all 
 make: Nada a ser feito para `all'.
 
-23:05:11 Build Finished (took 69ms)
+08:13:21 Build Finished (took 59ms)
 

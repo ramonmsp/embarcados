@@ -134,6 +134,9 @@ void Comunicacao::setPrimeiroGiro(short X, short Y, short Z){
 	primMenorGiroY = Y-50;
 	primMenorGiroZ = Z-50;
 };
+bool Comunicacao::getTap(short tap){
+	return !(tap==0);
+}
 
 
 

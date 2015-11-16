@@ -59,6 +59,8 @@ public:
 	void setPrimeiroAcel(short X, short Y, short Z);
 
 	void setPrimeiroGiro(short X, short Y, short Z);
+
+	bool getTap(short tap);
 };
 
 #endif /* COMUNICACAO_H_ */
