@@ -12,6 +12,12 @@
 #include <errno.h>
 #endif
 
+#define MIN_X_ACEL = 15;
+#define MAX_X_ACEL = 35;
+#define MIN_Y_ACEL = -15;
+#define MAX_Y_ACEL = 5;
+#define MIN_Z_ACEL = -270;
+#define MAX_Z_ACEL = -250;
 
 short primMaiorAcelX, primMaiorAcelY, primMaiorAcelZ, primMaiorGiroX, primMaiorGiroY, primMaiorGiroZ;
 short primMenorAcelX, primMenorAcelY, primMenorAcelZ, primMenorGiroX, primMenorGiroY, primMenorGiroZ;
