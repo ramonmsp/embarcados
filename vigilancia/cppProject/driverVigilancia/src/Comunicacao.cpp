@@ -97,8 +97,8 @@ int Comunicacao::finalizar(){
 	return EXIT_SUCCESS;
 }
 
-short Comunicacao::verificaAcel(short x, short y, short z){
-	short saida =0;
+int Comunicacao::verificaAcel(short x, short y, short z){
+	int saida =0;
 	if((x < 15 || x>35) && (y < -15 || y > 5) && (z < -270 || z > -250)){
 		saida = 1;
 	}
@@ -106,6 +106,13 @@ short Comunicacao::verificaAcel(short x, short y, short z){
 }
 
 
+int Comunicacao::verificaGiro(short x, short y, short z){
+	int saida =0;
+	if((x < -100 || x>200) && (y < -100 || y > 400) && (z < -200 || z > 250)){
+		saida = 1;
+	}
+	return saida;
+};
 
 
 

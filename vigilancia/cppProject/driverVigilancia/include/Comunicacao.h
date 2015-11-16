@@ -49,7 +49,9 @@ public:
 	int finalizar();
 
 	//verifica alteração no acel
-	short verificaAcel(short x, short y, short z);
+	int verificaAcel(short x, short y, short z);
+	//verifica alteração no gyro
+	int verificaGiro(short x, short y, short z);
 };
 
 #endif /* COMUNICACAO_H_ */
