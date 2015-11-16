@@ -1,19 +1,6 @@
-21:09:59 **** Incremental Build of configuration Debug for project driverVigilancia ****
+23:05:11 **** Incremental Build of configuration Debug for project driverVigilancia ****
 make all 
-Building file: ../src/Executor.cpp
-Invoking: GCC C++ Compiler
-g++ -I"/home/ramonmaciel/MEGA/MEGAsyncUploads/IFBA/Embarcados/projeto-dupla/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Executor.d" -MT"src/Executor.d" -o "src/Executor.o" "../src/Executor.cpp"
-../src/Executor.cpp: In function ‘int main(int, char**)’:
-../src/Executor.cpp:27:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
-  Comunicacao com = Comunicacao("/dev/ttyUSB3"); //verificar a porta correta na interface do arduino, no linux sera diferente
-                                              ^
-Finished building: ../src/Executor.cpp
- 
-Building target: driverVigilancia
-Invoking: GCC C++ Linker
-g++  -o "driverVigilancia"  ./src/Comunicacao.o ./src/Executor.o ./src/Extern.o   
-Finished building target: driverVigilancia
- 
+make: Nada a ser feito para `all'.
 
-21:09:59 Build Finished (took 398ms)
+23:05:11 Build Finished (took 69ms)
 

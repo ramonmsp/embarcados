@@ -16,7 +16,7 @@ reading of 345 corresponds to 345 * 8.75 = 3020 mdps = 3.02 dps.
 #include "L3G.h"
 #include "ADXL345.h"
 
-//objetos das bibliotecas do giroscopio e acelerometro, respectivamente
+//objetos  das bibliotecas do giroscopio e acelerometro, respectivamente
 L3G gyro = L3G();
 ADXL345 acel = ADXL345();
 
@@ -38,6 +38,16 @@ void setup() {
 
   gyro.enableDefault();
   acel.powerOn();
+  acel.setTapDuration(5);
+//set values for what is a tap, and what is a double tap (0-255)
+  acel.setTapThreshold(20); //62.5mg per increment
+  acel.setTapDuration(5); //625μs per increment
+  acel.setDoubleTapLatency(20); //1.25ms per increment
+  acel.setDoubleTapWindow(20); //1.25ms per increment
+  
+  acel.setActivityThreshold(20); //62.5mg per increment
+  acel.setInactivityThreshold(20); //62.5mg per increment
+  acel.setTimeInactivity(10); // how many seconds of no activity is inactive?
 }
 void enviarLeitura() {
   int tam = sizeof(leitura);
@@ -55,21 +65,22 @@ void setStruct() {
 }
 void loop() {
   byte interrupts = acel.getInterruptSource();
-  leitura.stateTap = 0;
+  
      
   gyro.read();
   setStruct();
   
   
   acel.readAccel(&leitura.acelX, &leitura.acelY, &leitura.acelZ);
-
-  
-  if(acel.triggered(interrupts, ADXL345_INT_SINGLE_TAP_BIT)){
-    leitura.stateTap = 1;
+  if(acel.triggered(interrupts, ADXL345_INT_INACTIVITY_BIT)){
+    leitura.stateTap = 0;
+  }
+  if(acel.triggered(interrupts, ADXL345_INT_ACTIVITY_BIT)){
+    leitura.stateTap = 2;
   }
 
- //Serial.print(leitura.stateTap); 
-  enviarLeitura();
+ Serial.print(leitura.stateTap); 
+//  enviarLeitura();
  
-  delay(300);
+  delay(500);
 }
