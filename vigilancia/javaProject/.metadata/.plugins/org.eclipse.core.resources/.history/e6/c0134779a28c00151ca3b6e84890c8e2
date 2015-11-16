@@ -1,0 +1,24 @@
+package br.edu.ifba.embarcados.driverVigilancia.executor.copy;
+
+import br.edu.ifba.embarcados.javaapp.asincexec.AsincExec;
+
+public class Executor {
+
+	public static void main(String[] args) throws InterruptedException {
+		ListenerAcelerometro listener = new ListenerAcelerometro();
+		
+		AsincExec asinc = new AsincExec("/dev/ttyUSB1"); 
+		
+		asinc.addListener(listener);
+		
+		Thread t = new Thread(asinc);
+		t.start();
+		
+		for(int i = 0; i<10; i++) {
+			Thread.sleep(3000);
+		}
+		asinc.setContinuar(false);
+		t.join();
+	}
+
+}
