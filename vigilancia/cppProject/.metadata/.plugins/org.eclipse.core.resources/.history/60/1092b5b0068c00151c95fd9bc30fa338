@@ -39,17 +39,14 @@ int ler() {
 		if (resultado == EXIT_SUCCESS) {  //se leu os dados ok
 			resultado = com.ler((char*) &cf, sizeof(cf)); //o resultado sera a leitura do f
 			if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai marcar o resultado como sucesso
-				if(flag){//captura os primeiros valores para se ter valores minimos e máximos
+				if(flag){
 					com.setPrimeiroAcel(eixos.acelX, eixos.acelY, eixos.acelZ);
 					com.setPrimeiroGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ);
 					flag=false;
 					resultado = EXIT_SUCCESS;
 				}
+
 				resultado = EXIT_SUCCESS;
-				if((com.verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  ||
-					(com.verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ) == 1)){
-							resultado = EXIT_FAILURE;
-				}
 			}
 		}
 	}

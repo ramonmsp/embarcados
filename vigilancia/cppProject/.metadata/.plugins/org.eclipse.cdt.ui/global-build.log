@@ -44,4 +44,55 @@ Finished building target: driverVigilancia
  
 23:05:11 **** Incremental Build of configuration Debug for project driverVigilancia ****
 make all 
+<<<<<<< HEAD
 make: Nada a ser feito para `all'.
+=======
+make: Nothing to be done for `all'.
+22:44:09 **** Incremental Build of configuration Debug for project driverVigilancia ****
+make all 
+Building file: ../src/Extern.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Extern.d" -MT"src/Extern.d" -o "src/Extern.o" "../src/Extern.cpp"
+Finished building: ../src/Extern.cpp
+ 
+Building target: driverVigilancia
+Invoking: GCC C++ Linker
+g++  -o "driverVigilancia"  ./src/Comunicacao.o ./src/Executor.o ./src/Extern.o   
+Finished building target: driverVigilancia
+ 
+22:47:42 **** Incremental Build of configuration Debug for project driverVigilancia ****
+make all 
+make: Nothing to be done for `all'.
+00:31:08 **** Incremental Build of configuration Debug for project driverVigilancia ****
+make all 
+Building file: ../src/Comunicacao.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Comunicacao.d" -MT"src/Comunicacao.d" -o "src/Comunicacao.o" "../src/Comunicacao.cpp"
+Finished building: ../src/Comunicacao.cpp
+ 
+Building file: ../src/Extern.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Extern.d" -MT"src/Extern.d" -o "src/Extern.o" "../src/Extern.cpp"
+Finished building: ../src/Extern.cpp
+ 
+Building target: driverVigilancia
+Invoking: GCC C++ Linker
+g++  -o "driverVigilancia"  ./src/Comunicacao.o ./src/Executor.o ./src/Extern.o   
+Finished building target: driverVigilancia
+ 
+00:35:41 **** Incremental Build of configuration Debug for project driverVigilancia ****
+make all 
+Building file: ../src/Extern.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Extern.d" -MT"src/Extern.d" -o "src/Extern.o" "../src/Extern.cpp"
+Finished building: ../src/Extern.cpp
+ 
+Building target: driverVigilancia
+Invoking: GCC C++ Linker
+g++  -o "driverVigilancia"  ./src/Comunicacao.o ./src/Executor.o ./src/Extern.o   
+Finished building target: driverVigilancia
+ 
+00:37:03 **** Incremental Build of configuration Debug for project driverVigilancia ****
+make all 
+make: Nothing to be done for `all'.
+>>>>>>> 37da8edb681abfc4b0733b85aad07b8384a02cfd

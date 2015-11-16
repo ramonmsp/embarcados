@@ -12,6 +12,12 @@
 #include <errno.h>
 #endif
 
+#define MIN_X_ACEL = 15;
+#define MAX_X_ACEL = 35;
+#define MIN_Y_ACEL = -15;
+#define MAX_Y_ACEL = 5;
+#define MIN_Z_ACEL = -270;
+#define MAX_Z_ACEL = -250;
 
 short primMaiorAcelX, primMaiorAcelY, primMaiorAcelZ, primMaiorGiroX, primMaiorGiroY, primMaiorGiroZ;
 short primMenorAcelX, primMenorAcelY, primMenorAcelZ, primMenorGiroX, primMenorGiroY, primMenorGiroZ;
@@ -126,13 +132,13 @@ void Comunicacao::setPrimeiroAcel(short X, short Y, short Z){
 };
 
 void Comunicacao::setPrimeiroGiro(short X, short Y, short Z){
-	primMaiorGiroX = X+50;
-	primMaiorGiroY = Y+50;
-	primMaiorGiroZ = Z+50;
+	primMaiorGiroX = X+30;
+	primMaiorGiroY = Y+30;
+	primMaiorGiroZ = Z+30;
 
-	primMenorGiroX = X-50;
-	primMenorGiroY = Y-50;
-	primMenorGiroZ = Z-50;
+	primMenorGiroX = X-30;
+	primMenorGiroY = Y-30;
+	primMenorGiroZ = Z-30;
 };
 
 
