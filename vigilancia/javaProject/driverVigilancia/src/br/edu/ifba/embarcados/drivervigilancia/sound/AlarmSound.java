@@ -9,10 +9,10 @@ import javazoom.jl.player.Player;
  
 public class AlarmSound {
  
-	public static void audio(){
+	public static void audio(String nome){
  
 		// STRING COM O CAMINHO DO ARQUIVO MP3 A SER TOCADO
-		String path = "res/alarme_001.mp3";
+		String path = "res/"+nome;
  
 		// INSTANCIAÇÃO DO OBJETO FILE COM O ARQUIVO MP3
 		File mp3File = new File(path);
