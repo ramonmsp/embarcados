@@ -1,8 +1,12 @@
-#Ignore Metadata
+#Ignore Metadata um desses funciona kkkk
 **/.metadata/*
 
 /.metadata
 
+.metadata
+
+
+#log não ta commitando mais
 *.log
 
 
