@@ -49,11 +49,12 @@ int ler() {
 				if((com.verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  ||
 					(com.verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ) == 1) ||
 					(com.getTap(eixos.stateTap))){
-							resultado = EXIT_FAILURE;
+							resultado = 505;
 				}
 			}
 		}
 	}
+
 	return resultado;
 }
 
@@ -77,6 +78,9 @@ int getGiroZ(){
 	return eixos.gyroZ;
 }
 
+int getTap(){
+	return eixos.stateTap;
+}
 int finalizar(){
 	return com.finalizar();
 }

@@ -77,9 +77,16 @@ void loop() {
   }
   if(acel.triggered(interrupts, ADXL345_INT_ACTIVITY_BIT)){
     leitura.stateTap = 1;
-  }
-  //Serial.print(leitura.stateTap);
+ }
+//  Serial.println("acel");
+//  Serial.println(leitura.acelX);
+//  Serial.println(leitura.acelY);
+//  Serial.println(leitura.acelZ);
+//  Serial.println("Giro");
+//  Serial.println(leitura.gyroX);
+//  Serial.println(leitura.gyroY);
+//  Serial.println(leitura.gyroZ);
   enviarLeitura();
  
-  delay(500);
+  delay(50);
 }

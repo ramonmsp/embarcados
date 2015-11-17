@@ -40,15 +40,19 @@ public class AsincExec implements Runnable{
 					System.out.println("Giro");
 					notificar(conector.getGiroX(), conector.getGiroY(), conector.getGiroZ());
 				}
-				else{
+				else {
 					System.out.println("Mexeu");
+					System.out.println("Acel");
+					notificar(conector.getAcelX(), conector.getAcelY(), conector.getAcelZ());
+					System.out.println("Giro");
+					notificar(conector.getGiroX(), conector.getGiroY(), conector.getGiroZ());
 					JavaMailApp.sendMail();
 					AlarmSound.audio();
 					continuar = false;
 				}
 				
 				try {
-					Thread.sleep(300);
+					Thread.sleep(50);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -63,6 +67,7 @@ public class AsincExec implements Runnable{
 	private void notificar(int x, int y, int z){
 		for (IListenerAcelerometro listener : listeners) {
 			listener.notificarMovimento(x, y, z);
+			//listener.notificarVibração(conector.getTap());
 		}
 	}
 }

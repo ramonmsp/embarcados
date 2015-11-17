@@ -12,7 +12,7 @@ public class AlarmSound {
 	public static void audio(){
  
 		// STRING COM O CAMINHO DO ARQUIVO MP3 A SER TOCADO
-		String path = "res/AlertRock.mp3";
+		String path = "res/alarme_001.mp3";
  
 		// INSTANCIAÇÃO DO OBJETO FILE COM O ARQUIVO MP3
 		File mp3File = new File(path);

@@ -14,16 +14,6 @@ public interface IComunicacaoSensores extends Library {
 	public int getGiroY();
 	public int getGiroZ();
 	
-	public short verificaAcel(short x, short y, short z);
-
-	//verifica alteração no gyro
-	public short verificaGiro(short x, short y, short z);
-
-	//Captura o primeiro valor de entrada
-	public void setPrimeiroAcel(short X, short Y, short Z);
-
-	public void setPrimeiroGiro(short X, short Y, short Z);
-
-	public boolean getTap(short tap);
+	public int getTap();
 	public int finalizar();
 }

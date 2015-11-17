@@ -1,6 +1,15 @@
-00:40:06 **** Incremental Build of configuration Release for project driverVigilancia ****
+11:01:33 **** Incremental Build of configuration Debug for project driverVigilancia ****
 make all 
-make: Nada a ser feito para `all'.
+Building file: ../src/Comunicacao.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/ramonmaciel/MEGA/MEGAsyncUploads/IFBA/Embarcados/projeto-dupla/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"src/Comunicacao.d" -MT"src/Comunicacao.d" -o "src/Comunicacao.o" "../src/Comunicacao.cpp"
+Finished building: ../src/Comunicacao.cpp
+ 
+Building target: driverVigilancia.so
+Invoking: GCC C++ Linker
+g++ -shared -o "driverVigilancia.so"  ./src/Comunicacao.o ./src/Executor.o   
+Finished building target: driverVigilancia.so
+ 
 
-00:40:06 Build Finished (took 94ms)
+11:01:33 Build Finished (took 195ms)
 

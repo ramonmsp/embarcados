@@ -22,17 +22,8 @@ int getGiroX();
 int getGiroY();
 int getGiroZ();
 
-short verificaAcel(short x, short y, short z);
 
-//verifica alteração no gyro
-short verificaGiro(short x, short y, short z);
-
-//Captura o primeiro valor de entrada
-void setPrimeiroAcel(short X, short Y, short Z);
-
-void setPrimeiroGiro(short X, short Y, short Z);
-
-bool getTap(short tap);
+int getTap();
 
 int finalizar();
 
