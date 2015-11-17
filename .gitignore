@@ -1,6 +1,4 @@
-#Ignore Metadata cpp
-/vigilancia/cppProject/.metadata
+#Ignore Metadata
+.metadata/
 
-#Ignore Metadata java
-/vigilancia/javaProject/.metadata
 
