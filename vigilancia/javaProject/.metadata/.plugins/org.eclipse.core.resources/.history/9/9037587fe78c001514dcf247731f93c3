@@ -45,7 +45,7 @@ public class AsincExec implements Runnable{
 				else{
 					System.out.println("Mexeu");
 					JavaMailApp.sendMail();
-					AlarmSound.audio();
+					AlarmSound.main(args);
 				}
 				
 				

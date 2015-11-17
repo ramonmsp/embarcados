@@ -6,13 +6,13 @@ import java.util.List;
 import br.edu.ifba.embarcados.drivervigilancia.conector.FabricaConectores;
 import br.edu.ifba.embarcados.drivervigilancia.conector.IComunicacaoSensores;
 import br.edu.ifba.embarcados.drivervigilancia.mail.JavaMailApp;
-import br.edu.ifba.embarcados.drivervigilancia.sound.AlarmSound;
 
 public class AsincExec implements Runnable{
 	
 	private String porta;
 	private boolean continuar;
 	private List<IListenerAcelerometro> listeners;
+	private JavaMailApp send;
 	
 	public AsincExec(String porta) {
 		this.porta = porta;
@@ -44,8 +44,6 @@ public class AsincExec implements Runnable{
 				}
 				else{
 					System.out.println("Mexeu");
-					JavaMailApp.sendMail();
-					AlarmSound.audio();
 				}
 				
 				

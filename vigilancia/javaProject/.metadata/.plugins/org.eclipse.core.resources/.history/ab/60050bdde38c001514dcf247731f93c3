@@ -12,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 
 public class JavaMailApp
 {
-      public static void sendMail() {
+      public static void main(String[] args) {
             Properties props = new Properties();
             /** Parâmetros de conexão com servidor Gmail */
             props.put("mail.smtp.host", "smtp.gmail.com");
@@ -35,14 +35,14 @@ public class JavaMailApp
             try {
 
                   Message message = new MimeMessage(session);
-                  message.setFrom(new InternetAddress("msp.ramon@gmail.com")); //Remetente
+                  message.setFrom(new InternetAddress("")); //Remetente
 
                   Address[] toUser = InternetAddress //Destinatário(s)
-                             .parse("randlersi@gmail.com, msp.ramon@gmail.com");  
+                             .parse("msp.ramon@gmail.com");  
 
                   message.setRecipients(Message.RecipientType.TO, toUser);
-                  message.setSubject("Lascou!");//Assunto
-                  message.setText("Atenção, você está sendo roubado");
+                  message.setSubject("Enviando email com JavaMail");//Assunto
+                  message.setText("Enviei este email utilizando JavaMail com minha conta GMail!");
                   /**Método para enviar a mensagem criada*/
                   Transport.send(message);
 

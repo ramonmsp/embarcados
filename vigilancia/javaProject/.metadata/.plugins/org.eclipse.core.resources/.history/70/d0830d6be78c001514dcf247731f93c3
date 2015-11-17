@@ -25,7 +25,7 @@ public class JavaMailApp
                         new javax.mail.Authenticator() {
                              protected PasswordAuthentication getPasswordAuthentication()
                              {
-                                   return new PasswordAuthentication("", "");
+                                   return new PasswordAuthentication("msp.ramon@gmail.com", "3asenhamenosnovaainda:)");
                              }
                         });
 
@@ -41,7 +41,7 @@ public class JavaMailApp
                              .parse("randlersi@gmail.com, msp.ramon@gmail.com");  
 
                   message.setRecipients(Message.RecipientType.TO, toUser);
-                  message.setSubject("Lascou!");//Assunto
+                  message.setSubject("Enviando email com JavaMail");//Assunto
                   message.setText("Atenção, você está sendo roubado");
                   /**Método para enviar a mensagem criada*/
                   Transport.send(message);

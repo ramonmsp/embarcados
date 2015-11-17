@@ -9,7 +9,7 @@ import javazoom.jl.player.Player;
  
 public class AlarmSound {
  
-	public static void audio(){
+	public static void main(String[] args) {
  
 		// STRING COM O CAMINHO DO ARQUIVO MP3 A SER TOCADO
 		String path = "res/AlertRock.mp3";
