@@ -1,0 +1,2 @@
+2015-11-16 22:07:54,723 [Worker-5] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/net/java/dev/jna/jna/3.3.0/jna-3.3.0-sources.jar
+2015-11-16 22:07:58,387 [Worker-5] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/net/java/dev/jna/jna/3.3.0/jna-3.3.0-sources.jar

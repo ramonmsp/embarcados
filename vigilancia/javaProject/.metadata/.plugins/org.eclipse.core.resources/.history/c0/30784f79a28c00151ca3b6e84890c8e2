@@ -1,0 +1,20 @@
+package br.edu.ifba.embarcados.driverVigilancia.executor.copy;
+
+import br.edu.ifba.embarcados.driverVigilancia.asincexec.IListenerAcelerometro;
+
+public class ListenerAcelerometro implements IListenerAcelerometro{
+
+	@Override
+	public void notificarMovimento(int x, int y, int z) {
+		System.out.println("X = " + x);
+		System.out.println("Y = " + y);
+		System.out.println("Z = " + z);		
+	}
+
+	@Override
+	public void notificarVibração() {
+		
+		
+	}
+	
+}
