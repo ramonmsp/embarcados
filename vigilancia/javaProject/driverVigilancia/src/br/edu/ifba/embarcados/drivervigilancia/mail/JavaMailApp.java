@@ -21,11 +21,12 @@ public class JavaMailApp
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.port", "465");
 
+            final Senha auth = new Senha();
             Session session = Session.getDefaultInstance(props,
                         new javax.mail.Authenticator() {
                              protected PasswordAuthentication getPasswordAuthentication()
                              {
-                                   return new PasswordAuthentication("", "");
+                                   return new PasswordAuthentication(auth.getEmail(), auth.getSenha());
                              }
                         });
 
@@ -35,7 +36,7 @@ public class JavaMailApp
             try {
 
                   Message message = new MimeMessage(session);
-                  message.setFrom(new InternetAddress("msp.ramon@gmail.com")); //Remetente
+                  message.setFrom(new InternetAddress(auth.getEmail())); //Remetente
 
                   Address[] toUser = InternetAddress //Destinatário(s)
                              .parse("randlersi@gmail.com, msp.ramon@gmail.com");  

@@ -11,7 +11,7 @@ import br.edu.ifba.embarcados.drivervigilancia.sound.AlarmSound;
 public class AsincExec implements Runnable{
 	
 	private String porta;
-	private boolean continuar;
+	private boolean continuar = true;
 	private List<IListenerAcelerometro> listeners;
 	
 	public AsincExec(String porta) {
@@ -23,8 +23,8 @@ public class AsincExec implements Runnable{
 		listeners.add(listener);
 	}
 
-	public void setContinuar(boolean continuar){
-		this.continuar = continuar;
+	public void stopThread(){
+		this.continuar = false;
 	}
 	
 	@Override
@@ -32,8 +32,6 @@ public class AsincExec implements Runnable{
 		
 		IComunicacaoSensores conector = FabricaConectores.getConector();
 		if(conector.iniciar(porta) == 0) {
-			
-			continuar = true;
 			
 			while(continuar){
 				if (conector.ler() == 0) {
@@ -46,15 +44,14 @@ public class AsincExec implements Runnable{
 					System.out.println("Mexeu");
 					JavaMailApp.sendMail();
 					AlarmSound.audio();
+					continuar = false;
 				}
 				
-				
-				
-					try {
-						Thread.sleep(300);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 	
 			}
 			conector.finalizar();

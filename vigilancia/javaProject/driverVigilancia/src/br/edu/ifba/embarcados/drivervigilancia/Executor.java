@@ -7,7 +7,7 @@ public class Executor {
 	public static void main(String[] args) throws InterruptedException {
 		ListenerAcelerometro listener = new ListenerAcelerometro();
 		
-		AsincExec asinc = new AsincExec("/dev/ttyUSB0"); 
+		AsincExec asinc = new AsincExec("/dev/ttyACM0"); 
 		
 		asinc.addListener(listener);
 		
@@ -17,7 +17,7 @@ public class Executor {
 		for(int i = 0; i<10; i++) {
 			Thread.sleep(3000);
 		}
-		asinc.setContinuar(false);
+		asinc.stopThread();
 		t.join();
 	}
 
