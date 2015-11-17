@@ -14,4 +14,10 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>Teste_loc</name>
+			<value>file:/home/ramonmaciel/MEGA/MEGAsyncUploads/IFBA/Embarcados/projeto-dupla/embarcados/vigilancia/javaProject/driverVigilancia/driverVigilancia.so</value>
+		</variable>
+	</variableList>
 </projectDescription>
