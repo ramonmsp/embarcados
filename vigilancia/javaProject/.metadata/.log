@@ -3444,3 +3444,13 @@ Caused by: org.eclipse.core.runtime.OperationCanceledException
 	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
 	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136)
 	... 24 more
+!SESSION 2015-11-16 23:20:18.817 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -data /home/ramonmaciel/MEGA/MEGAsyncUploads/IFBA/Embarcados/projeto-dupla/embarcados/vigilancia/javaProject -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.debug.core 4 120 2015-11-17 00:19:20.233
+!MESSAGE Variable references empty selection: ${project_loc}

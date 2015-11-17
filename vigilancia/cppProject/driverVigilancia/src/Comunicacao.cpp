@@ -116,23 +116,23 @@ short Comunicacao::verificaGiro(short x, short y, short z){
 
 };
 void Comunicacao::setPrimeiroAcel(short X, short Y, short Z){
-	primMaiorAcelX = X+30;
-	primMaiorAcelY = Y+30;
-	primMaiorAcelZ = Z+30;
+	primMaiorAcelX = X+170;
+	primMaiorAcelY = Y+170;
+	primMaiorAcelZ = Z+170;
 
-	primMenorAcelX = X-30;
-	primMenorAcelY = Y-30;
-	primMenorAcelZ = Z-30;
+	primMenorAcelX = X-170;
+	primMenorAcelY = Y-170;
+	primMenorAcelZ = Z-170;
 };
 
 void Comunicacao::setPrimeiroGiro(short X, short Y, short Z){
-	primMaiorGiroX = X+50;
-	primMaiorGiroY = Y+50;
-	primMaiorGiroZ = Z+50;
+	primMaiorGiroX = X+200;
+	primMaiorGiroY = Y+200;
+	primMaiorGiroZ = Z+200;
 
-	primMenorGiroX = X-50;
-	primMenorGiroY = Y-50;
-	primMenorGiroZ = Z-50;
+	primMenorGiroX = X-200;
+	primMenorGiroY = Y-200;
+	primMenorGiroZ = Z-200;
 };
 bool Comunicacao::getTap(short tap){
 	return !(tap==0);

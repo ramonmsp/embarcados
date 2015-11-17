@@ -34,11 +34,20 @@ public class AsincExec implements Runnable{
 			continuar = true;
 			
 			while(continuar){
-				conector.ler();
-				notificar(conector.getAcelX(), conector.getAcelY(), conector.getAcelZ());
+				if (conector.ler() == 0) {
+					System.out.println("Acel");
+					notificar(conector.getAcelX(), conector.getAcelY(), conector.getAcelZ());
+					System.out.println("Giro");
+					notificar(conector.getGiroX(), conector.getGiroY(), conector.getGiroZ());
+				}
+				else{
+					System.out.println("Mexeu");
+				}
+				
+				
 				
 					try {
-						Thread.sleep(100);
+						Thread.sleep(300);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
