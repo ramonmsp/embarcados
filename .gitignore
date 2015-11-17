@@ -1,4 +1,6 @@
 #Ignore Metadata
-.metadata/
+**/.metadata/*
+
+*.log
 
 
