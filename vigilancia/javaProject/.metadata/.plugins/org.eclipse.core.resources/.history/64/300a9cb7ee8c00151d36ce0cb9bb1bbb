@@ -56,7 +56,7 @@ public class AlarmSound {
 		 */
 		public void run() {
 			try {
-				
+				while(true){
 				FileInputStream fis = new FileInputStream(mp3);
 				BufferedInputStream bis = new BufferedInputStream(fis);
 				
@@ -65,7 +65,7 @@ public class AlarmSound {
 				
 				this.player.play();
 				
-				
+				}
 				//System.out.println("Terminado Musica!");
  
 			} catch (Exception e) {

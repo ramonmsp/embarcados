@@ -13,7 +13,8 @@ public class FabricaConectores {
 		} else if (Platform.isLinux()){
 			
 			conector = (IComunicacaoSensores) Native.loadLibrary("driverVigilancia.so", IComunicacaoSensores.class);
-		}	
+		}
+		
 		
 		return conector;
 		

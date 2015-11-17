@@ -14,8 +14,11 @@ public class Executor {
 		Thread t = new Thread(asinc);
 		t.start();
 		
-		//asinc.stopThread();
-		//t.join();
+		for(int i = 0; i<10; i++) {
+			Thread.sleep(3000);
+		}
+		asinc.stopThread();
+		t.join();
 	}
 
 }
