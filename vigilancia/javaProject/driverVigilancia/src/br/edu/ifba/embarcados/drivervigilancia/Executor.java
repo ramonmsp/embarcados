@@ -14,7 +14,6 @@ public class Executor {
 		Thread t = new Thread(asinc);
 		t.start();
 		
-		
 		//asinc.stopThread();
 		//t.join();
 	}

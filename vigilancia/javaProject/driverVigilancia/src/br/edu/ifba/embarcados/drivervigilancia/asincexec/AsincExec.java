@@ -46,9 +46,9 @@ public class AsincExec implements Runnable{
 					notificar(conector.getAcelX(), conector.getAcelY(), conector.getAcelZ());
 					System.out.println("Giro");
 					notificar(conector.getGiroX(), conector.getGiroY(), conector.getGiroZ());
-					JavaMailApp.sendMail();
 					AlarmSound.audio("alarme_001.mp3");
 					AlarmSound.audio("alarme_002.mp3");
+					JavaMailApp.sendMail();
 					continuar = false;
 					
 				}

@@ -42,10 +42,10 @@ public class JavaMailApp
                              .parse("randlersi@gmail.com, msp.ramon@gmail.com");
                   /*
                   Address[] toUser = InternetAddress //Destinatário(s)
-                          .parse("randlersi@gmail.com, msp.ramon@gmail.com, luis");  
+                          .parse("randlersi@gmail.com, msp.ramon@gmail.com");  
                   */
                   message.setRecipients(Message.RecipientType.TO, toUser);
-                  message.setSubject("Lascou![EMBARCADOS]");//Assunto
+                  message.setSubject("[EMBARCADOS] Lascou!");//Assunto
                   message.setText("Atenção, você está sendo roubado.");
                   /**Método para enviar a mensagem criada*/
                   Transport.send(message);

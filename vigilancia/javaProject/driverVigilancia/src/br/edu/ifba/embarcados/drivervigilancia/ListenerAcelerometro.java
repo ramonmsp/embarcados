@@ -12,10 +12,7 @@ public class ListenerAcelerometro implements IListenerAcelerometro{
 	}
 
 	@Override
-	public void notificarVibração(int tap) {
-		if (tap == 1)
-		System.out.println("Objeto foi tocado");
-		
+	public void notificarVibração() {
 	}
 	
 }

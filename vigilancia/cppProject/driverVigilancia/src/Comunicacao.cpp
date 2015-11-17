@@ -94,7 +94,7 @@ int Comunicacao::finalizar(){
 	return EXIT_SUCCESS;
 }
 
-short Comunicacao::verificaAcel(short x, short y, short z){
+int Comunicacao::verificaAcel(short x, short y, short z){
 	int saida =0;
 	if((x < primMenorAcelX || x > primMaiorAcelX) ||
 			(y < primMenorAcelY || y > primMaiorAcelY) ||
@@ -105,8 +105,8 @@ short Comunicacao::verificaAcel(short x, short y, short z){
 }
 
 
-short Comunicacao::verificaGiro(short x, short y, short z){
-	short saida =0;
+int Comunicacao::verificaGiro(short x, short y, short z){
+	int saida =0;
 	if((x < primMenorGiroX || x > primMaiorGiroX) ||
 			(y < primMenorGiroY || y > primMaiorGiroY) ||
 			(z < primMenorGiroZ || z > primMaiorGiroZ)){

@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;driverVigilancia/src/Executor.cpp&apos;" deleteContents="false" description="Delete resource &apos;driverVigilancia/src/Executor.cpp&apos;" element1="/driverVigilancia/src/Executor.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1447673991251"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;driverVigilancia/src/Executor.cpp&apos;" deleteContents="false" description="Delete resource &apos;driverVigilancia/src/Executor.cpp&apos;" element1="/driverVigilancia/src/Executor.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1447673991251"/>&#x0A;<refactoring comment="Delete resource &apos;driverVigilancia/driverVigilancia.so&apos;" deleteContents="false" description="Delete resource &apos;driverVigilancia/driverVigilancia.so&apos;" element1="/driverVigilancia/driverVigilancia.so" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1447784067697"/>
 </session>
