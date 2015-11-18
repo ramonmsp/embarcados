@@ -6,6 +6,8 @@ import java.util.List;
 import br.edu.ifba.embarcados.drivervigilancia.conector.FabricaConectores;
 import br.edu.ifba.embarcados.drivervigilancia.conector.IComunicacaoSensores;
 import br.edu.ifba.embarcados.drivervigilancia.mail.JavaMailApp;
+import br.edu.ifba.embarcados.drivervigilancia.sirene.Inalterado;
+import br.edu.ifba.embarcados.drivervigilancia.sirene.Sirene;
 import br.edu.ifba.embarcados.drivervigilancia.sound.AlarmSound;
 
 public class AsincExec implements Runnable{
@@ -13,6 +15,8 @@ public class AsincExec implements Runnable{
 	private String porta;
 	private boolean continuar = true;
 	private List<IListenerAcelerometro> listeners;
+	private Sirene frame = new Sirene();
+	private Inalterado tela = new Inalterado();
 	
 	public AsincExec(String porta) {
 		this.porta = porta;
@@ -35,12 +39,16 @@ public class AsincExec implements Runnable{
 			
 			while(continuar){
 				if (conector.ler() == 0) {
+					tela.setVisible(true);
 					System.out.println("Acel");
 					notificar(conector.getAcelX(), conector.getAcelY(), conector.getAcelZ());
 					System.out.println("Giro");
 					notificar(conector.getGiroX(), conector.getGiroY(), conector.getGiroZ());
 				}
 				else {
+					try {
+					tela.setVisible(false);		
+					frame.setVisible(true);
 					System.out.println("Mexeu");
 					System.out.println("Acel");
 					notificar(conector.getAcelX(), conector.getAcelY(), conector.getAcelZ());
@@ -50,7 +58,11 @@ public class AsincExec implements Runnable{
 					AlarmSound.audio("alarme_002.mp3");
 					JavaMailApp.sendMail();
 					continuar = false;
+
 					
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 				
 				try {
