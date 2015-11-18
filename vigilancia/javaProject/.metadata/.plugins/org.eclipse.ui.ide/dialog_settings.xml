@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="184" key="DIALOG_Y_ORIGIN"/>
+		<item value="388" key="DIALOG_X_ORIGIN"/>
+	</section>
 	<section name="ExternalProjectImportWizard">
-		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/javaProject"/>
 			<item value="/home/ramonmaciel/MEGA/MEGAsyncUploads/IFBA/Embarcados/projeto-dupla/embarcados/vigilancia/javaProject/driverVigilancia"/>
 			<item value="/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos Embarcados/Projetos Java"/>
 		</list>
@@ -20,9 +25,5 @@
 		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 		</list>
-	</section>
-	<section name="ChooseWorkspaceDialogSettings">
-		<item value="388" key="DIALOG_X_ORIGIN"/>
-		<item value="184" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

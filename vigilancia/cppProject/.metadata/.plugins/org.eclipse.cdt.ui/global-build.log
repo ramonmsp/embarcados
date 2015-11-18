@@ -1,3 +1,39 @@
-15:17:09 **** Incremental Build of configuration Debug for project driverVigilancia ****
+21:04:18 **** Build of configuration Debug for project driverVigilancia ****
 make all 
-make: Nada a ser feito para `all'.
+Building file: ../src/Comunicacao.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"src/Comunicacao.d" -MT"src/Comunicacao.d" -o "src/Comunicacao.o" "../src/Comunicacao.cpp"
+Finished building: ../src/Comunicacao.cpp
+ 
+Building file: ../src/Executor.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA VI semestre/Sistemas Embarcados_Optativa/Projetos do Git Embarcados/embarcados/vigilancia/cppProject/driverVigilancia/include" -O0 -g3 -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"src/Executor.d" -MT"src/Executor.d" -o "src/Executor.o" "../src/Executor.cpp"
+../src/Executor.cpp: In function ‘int main(int, char**)’:
+../src/Executor.cpp:27:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  Comunicacao com = Comunicacao("/dev/ttyUSB1"); //verificar a porta correta na interface do arduino, no linux sera diferente
+                                              ^
+../src/Executor.cpp:24:8: warning: unused variable ‘primAcelX’ [-Wunused-variable]
+  short primAcelX, primAcelY, primAcelZ, primGiroX, primGiroY, primGiroZ;
+        ^
+../src/Executor.cpp:24:19: warning: unused variable ‘primAcelY’ [-Wunused-variable]
+  short primAcelX, primAcelY, primAcelZ, primGiroX, primGiroY, primGiroZ;
+Finished building: ../src/Executor.cpp
+                   ^
+ 
+../src/Executor.cpp:24:30: warning: unused variable ‘primAcelZ’ [-Wunused-variable]
+Building target: driverVigilancia.so
+Invoking: GCC C++ Linker
+g++ -shared -o "driverVigilancia.so"  ./src/Comunicacao.o ./src/Executor.o   
+  short primAcelX, primAcelY, primAcelZ, primGiroX, primGiroY, primGiroZ;
+                              ^
+../src/Executor.cpp:24:41: warning: unused variable ‘primGiroX’ [-Wunused-variable]
+  short primAcelX, primAcelY, primAcelZ, primGiroX, primGiroY, primGiroZ;
+                                         ^
+../src/Executor.cpp:24:52: warning: unused variable ‘primGiroY’ [-Wunused-variable]
+  short primAcelX, primAcelY, primAcelZ, primGiroX, primGiroY, primGiroZ;
+                                                    ^
+../src/Executor.cpp:24:63: warning: unused variable ‘primGiroZ’ [-Wunused-variable]
+  short primAcelX, primAcelY, primAcelZ, primGiroX, primGiroY, primGiroZ;
+                                                               ^
+Finished building target: driverVigilancia.so
+ 
