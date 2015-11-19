@@ -10,8 +10,7 @@ public class FabricaConectores {
 		
 		if (Platform.isWindows()) {
 			conector = (IComunicacaoSensores) Native.loadLibrary("driverVigilancia.dll", IComunicacaoSensores.class);
-		} else if (Platform.isLinux()){
-			
+		} else if (Platform.isLinux()){			
 			conector = (IComunicacaoSensores) Native.loadLibrary("driverVigilancia.so", IComunicacaoSensores.class);
 		}	
 		
