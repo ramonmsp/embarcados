@@ -49,7 +49,7 @@ void setup() {
   acel.setInactivityThreshold(20); //62.5mg per increment
   acel.setTimeInactivity(10); // how many seconds of no activity is inactive?
 }
-void enviarLeitura() {
+void enviarLeitura() { //cria um buffer do tamanho da estrutura e o envia a memoria do pc
   int tam = sizeof(leitura);
   char buffGyro[tam];
   memcpy(&buffGyro, &leitura, tam);
@@ -66,15 +66,20 @@ void setStruct() {
 void loop() {
   byte interrupts = acel.getInterruptSource();
   
-     
+  //leitura do giroscopio   
   gyro.read();
+  //seta o retorno da leitura na estrutura
+  
   setStruct();
   
-  
+  //faz a leitura do acelerometro
   acel.readAccel(&leitura.acelX, &leitura.acelY, &leitura.acelZ);
+  
+  //capta inatividade no sensor
   if(acel.triggered(interrupts, ADXL345_INT_INACTIVITY_BIT)){
     leitura.stateTap = 0;
   }
+  //capta atividade no sensor
   if(acel.triggered(interrupts, ADXL345_INT_ACTIVITY_BIT)){
     leitura.stateTap = 1;
  }
