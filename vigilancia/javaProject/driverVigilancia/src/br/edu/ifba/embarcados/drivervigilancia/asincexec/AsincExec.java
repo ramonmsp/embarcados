@@ -57,11 +57,12 @@ public class AsincExec implements Runnable{
 					AlarmSound.audio("alarme_001.mp3");
 					AlarmSound.audio("alarme_002.mp3");
 					JavaMailApp.sendMail();
-					continuar = false;
+					stopThread();
 
 					
 					} catch (Exception e) {
 						e.printStackTrace();
+						stopThread();
 					}
 				}
 				

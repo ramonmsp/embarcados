@@ -46,7 +46,7 @@ public class JavaMailApp
                   */
                   message.setRecipients(Message.RecipientType.TO, toUser);
                   message.setSubject("[EMBARCADOS] Lascou!");//Assunto
-                  message.setText("Atenção, você está sendo roubado.");
+                  message.setText("Atenção, você está sendo roubado!");
                   /**Método para enviar a mensagem criada*/
                   Transport.send(message);
 

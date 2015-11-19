@@ -15,7 +15,7 @@ public class Executor {
 		t.start();
 		
 		//asinc.stopThread();
-		//t.join();
+		t.join();
 	}
 
 }
