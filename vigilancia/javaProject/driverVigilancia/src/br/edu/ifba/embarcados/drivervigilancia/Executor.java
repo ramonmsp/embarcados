@@ -14,6 +14,7 @@ public class Executor {
 		Thread t = new Thread(asinc);
 		t.start();
 		
+		// FIXME não esta parando a thread (setContinuar(false))
 		//asinc.stopThread();
 		t.join();
 	}
