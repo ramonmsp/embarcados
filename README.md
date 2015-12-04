@@ -2,7 +2,7 @@
 Projetos para a Disciplina Sistemas Embarcados.
 Alunos: Ramon Maciel  e Randler Ferraz 
 
-I unidade
+#I unidade
 
 SISTEMA DE VIGILÂNCIA → O software deve monitorar o acelerômetro e o giroscópio. Ao perceber modificações
 nos dois sensores (deslocamentos e vibrações), o software deve emitir avisos sonoros e enviar um e-mail de alerta
@@ -11,7 +11,8 @@ informando que o objeto vigiado foi movido do seu lugar. Deve ser utilizada a bi
 Os seguintes sensores serão utilizados para implementação desse sistema embarcado e alto nível: 
 GY-80 → Responsavel por verificar o giroscopio e acelerometro;
 
-II unidade
+#II unidade
+
 SISTEMA DE MONITORAMENTO DE VACINAS → Monitorar o ambiente onde a vacina está armazenada, saber temperatura, umidade do ar e luminosidade. 
 Esse tipo de medicamento deve ficar exposto a temperatura, umidade do ar e nível de iluminação controlados. 
 Esse controle é necessário, principalmente das vacinas fotossensíveis, por causa do custo de produção em massa e distribuição. 
