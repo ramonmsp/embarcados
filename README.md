@@ -29,9 +29,10 @@ Os seguintes sensores serão utilizados para implementação desse sistema embar
 * RF → Sensor de receptor de rádio frequência.
 
 O emissor enviará os dados que os sensores capturarão:
-Temperatura atual;
-Umidade relativa do ar;
-Indicativo de luminosidade.
+
+* Temperatura atual;
+* Umidade relativa do ar;
+* Indicativo de luminosidade.
 
 Previsto como as informações serão agrupadas em número(s) longo(s) para transmissão:
 
