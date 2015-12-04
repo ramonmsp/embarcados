@@ -35,6 +35,6 @@ O emissor enviará os dados que os sensores capturarão:
 Previsto como as informações serão agrupadas em número(s) longo(s) para transmissão:
 * 4 bits para identificação, utilizado pelo RF; 
 * 8 bits para a umidade (DHT 11);  
-* 8 para a Temperatura (DHT 11);  
-* 10 para a luminosidade (LDR).
+* 8 bits para a Temperatura (DHT 11);  
+* 10 bits para a luminosidade (LDR).
 
