@@ -34,8 +34,9 @@ Umidade relativa do ar;
 Indicativo de luminosidade.
 
 Previsto como as informações serão agrupadas em número(s) longo(s) para transmissão:
-4 bits para identificação, utilizado pelo RF;
-8 bits para a umidade (DHT 11); 
-8 para a Temperatura (DHT 11); 
-10 para a luminosidade (LDR).
+
+* 4 bits para identificação, utilizado pelo RF; 
+* 8 bits para a umidade (DHT 11);  
+* 8 para a Temperatura (DHT 11);  
+* 10 para a luminosidade (LDR).
 
