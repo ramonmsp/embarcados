@@ -23,19 +23,16 @@ O sistema embarcado trará a comodidade de eliminar verificação desses itens m
 Evita que essa medicação, algumas de custo muito elevado, estrague por conta de condições ruins de armazenamento. 
 
 Os seguintes sensores serão utilizados para implementação desse sistema embarcado e alto nível: 
-
 * DHT11 → Sensores de umidade do ar e temperatura; 
 * LDR → Sensor de luminosidade; 
 * RF → Sensor de receptor de rádio frequência.
 
 O emissor enviará os dados que os sensores capturarão:
-
 * Temperatura atual;
 * Umidade relativa do ar;
 * Indicativo de luminosidade.
 
 Previsto como as informações serão agrupadas em número(s) longo(s) para transmissão:
-
 * 4 bits para identificação, utilizado pelo RF; 
 * 8 bits para a umidade (DHT 11);  
 * 8 para a Temperatura (DHT 11);  
