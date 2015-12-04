@@ -24,9 +24,11 @@ Evita que essa medicação, algumas de custo muito elevado, estrague por conta d
 
 Os seguintes sensores serão utilizados para implementação desse sistema embarcado e alto nível: 
 
-**DHT11 →** Sensores de umidade do ar e temperatura;
-**LDR →** Sensor de luminosidade;
-**RF →** Sensor de receptor de rádio frequência.
+*DHT11 → Sensores de umidade do ar e temperatura;
+
+*LDR → Sensor de luminosidade;
+
+*RF → Sensor de receptor de rádio frequência.
 
 O emissor enviará os dados que os sensores capturarão:
 Temperatura atual;
