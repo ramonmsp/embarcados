@@ -8,7 +8,7 @@ RCSwitch receptor = RCSwitch();
 //Total de controles de RF possiveis
 #define RFID_LIMITE_INFER 6
 #define RFID_LIMITE_SUPER 12
-#define RFID 28
+#define RFID 6
 
 #define DESLOCAMENTO_RFID 26
 #define DESLOCAMENTO_UMID 18
@@ -59,7 +59,6 @@ long lerSensoresRF() {
 //-------------------------------- RFIDValido ---------------------------------
 boolean RFIDValido(long info) {
   boolean valido = false;
-  Serial.println(infoRF.id);
   infoRF.id = info  >> DESLOCAMENTO_RFID;
   if((infoRF.id >= RFID_LIMITE_INFER) &&
       (infoRF.id <= RFID_LIMITE_SUPER)){
