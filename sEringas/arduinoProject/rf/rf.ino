@@ -6,9 +6,9 @@ RCSwitch emissor = RCSwitch();
 RCSwitch receptor = RCSwitch();
 
 //Total de controles de RF possiveis
-//#define RFID_LIMITE_INFER 1100
-//#define RFID_LIMITE_SUPER 1110
-#define RFID 12
+#define RFID_LIMITE_INFER 6
+#define RFID_LIMITE_SUPER 12
+#define RFID 28
 
 #define DESLOCAMENTO_RFID 26
 #define DESLOCAMENTO_UMID 18
@@ -46,8 +46,8 @@ long lerSensoresRF() {
   long ldrValor = analogRead(LDR_PIN); 
   long umidadeValor = dht.readHumidity();
   long temperaturaValor = dht.readTemperature();
-  long rf = RFID;
-    
+
+  long rf = RFID;  
   long info = rf << DESLOCAMENTO_RFID;
   info = info | (umidadeValor << DESLOCAMENTO_UMID);
   info = info | (temperaturaValor << DESLOCAMENTO_TEMP);
@@ -59,9 +59,10 @@ long lerSensoresRF() {
 //-------------------------------- RFIDValido ---------------------------------
 boolean RFIDValido(long info) {
   boolean valido = false;
-  
+  Serial.println(infoRF.id);
   infoRF.id = info  >> DESLOCAMENTO_RFID;
-  if (infoRF.id == RFID) {
+  if((infoRF.id >= RFID_LIMITE_INFER) &&
+      (infoRF.id <= RFID_LIMITE_SUPER)){
     valido = true;
   }
   return valido;
@@ -131,25 +132,25 @@ void loop() {
     infoRF.umidade = extrairUmidade(info);
     infoRF.temperatura = extrairTemperatura(info);
     infoRF.luminosidade = extrairLuminosidade(info);
-    enviarParaUSB();
+  //  enviarParaUSB();
 
-//      Serial.println();
-//      int luminosidade = extrairLuminosidade(info);
-//      Serial.print("A luminosidade eh de: ");
-//      Serial.print(luminosidade);
-//      Serial.println(" lumens");
-//
-//      int temperatura = extrairTemperatura(info);
-//
-//      Serial.print("A temperatura eh de ");
-//      Serial.print(temperatura);
-//      Serial.println("*C");
-//  
-//      int umidade = extrairUmidade(info); 
-//      
-//      Serial.print("A umidade eh de ");
-//      Serial.print(umidade);
-//      Serial.println("% ");
+      Serial.println();
+      int luminosidade = extrairLuminosidade(info);
+      Serial.print("A luminosidade eh de: ");
+      Serial.print(luminosidade);
+      Serial.println(" lumens");
+
+      int temperatura = extrairTemperatura(info);
+
+      Serial.print("A temperatura eh de ");
+      Serial.print(temperatura);
+      Serial.println("*C");
+  
+      int umidade = extrairUmidade(info); 
+      
+      Serial.print("A umidade eh de ");
+      Serial.print(umidade);
+      Serial.println("% ");
 
 
     }
