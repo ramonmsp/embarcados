@@ -5,9 +5,6 @@
 
 .metadata
 
-.cproject
-
-
 #log não ta commitando mais
 *.log
 
