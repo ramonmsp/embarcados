@@ -8,6 +8,7 @@ RCSwitch receptor = RCSwitch();
 //Total de controles de RF possiveis
 #define RFID_LIMITE_INFER 6
 #define RFID_LIMITE_SUPER 12
+//definindo qual será esse RF
 #define RFID 6
 
 #define DESLOCAMENTO_RFID 26
@@ -89,8 +90,9 @@ void enviarParaUSB(){
    char buff[sizeof(InfoRF)] = {0};
    
    memcpy(&buff, &infoRF, sizeof(InfoRF));
+   Serial.write('I');
    Serial.write((uint8_t*) &buff, sizeof(InfoRF));
-   
+   Serial.write('F');
 }
 
 // ----------------------------- Metodos de Extração de valores ----------------------------
@@ -127,31 +129,11 @@ void loop() {
   info = receber();
   if (info != -1) {
     if (RFIDValido(info)) {
-
     infoRF.umidade = extrairUmidade(info);
     infoRF.temperatura = extrairTemperatura(info);
     infoRF.luminosidade = extrairLuminosidade(info);
-  //  enviarParaUSB();
-
-      Serial.println();
-      int luminosidade = extrairLuminosidade(info);
-      Serial.print("A luminosidade eh de: ");
-      Serial.print(luminosidade);
-      Serial.println(" lumens");
-
-      int temperatura = extrairTemperatura(info);
-
-      Serial.print("A temperatura eh de ");
-      Serial.print(temperatura);
-      Serial.println("*C");
-  
-      int umidade = extrairUmidade(info); 
-      
-      Serial.print("A umidade eh de ");
-      Serial.print(umidade);
-      Serial.println("% ");
-
-
+   
+    enviarParaUSB();
     }
   }
 
