@@ -11,35 +11,42 @@ using namespace std;
 
 struct InfoRF {
 	short id;
-	short batimentos;
+	short umidade;
 	short temperatura;
-	bool movimento;
+	short luminosidade;
 };
 
 int main(int argc, char **argv) {
 
-	InfoRF info = {0};
-	Comunicacao com("/dev/ttyUSB0");
-	com.iniciar();
+	Comunicacao com("/dev/ttyUSB1");
 
+ 	//iniciou a comunicacao
+	if (com.iniciar() == EXIT_SUCCESS) {  //se foi iniciado com sucesso
+		char ci, cf;
+		InfoRF info = { 0 };
 
-	while(true){
-		if(com.ler((char*) &info, sizeof(InfoRF)) == 0){
-			cout << "id = " << info.id << endl;
-			cout << "temp = " << info.temperatura << endl;
-			cout << "bat = " << info.batimentos<< endl;
-			cout << "mov = " << info.movimento<< endl;
+		while (true) {
+			//realizar a leitura do caractere i que representa o inicio
+			int resultado = com.ler((char*) &ci, sizeof(ci)); //manda ler e capta o resultado
+			if (resultado == EXIT_SUCCESS && (ci == 'I')) { //se o resultado for sucesso e ele tiver encontrado o i
+				resultado = com.ler((char*) &info, sizeof(info)); //vai ler o conteudo de dados depois do i na estrutura
+				if (resultado == EXIT_SUCCESS) {  //se leu os dados ok
+					resultado = com.ler((char*) &cf, sizeof(cf)); //o resultado sera a leitura do f
+					if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai imprimir
+						cout << "id = " << info.id << endl;
+						cout << "umid = " << info.umidade << endl;
+						cout << "temp = " << info.temperatura << endl;
+						cout << "lum = " << info.luminosidade << endl;
 
+					}
+				}
+			}
+
+			Sleep(50);
 		}
-
-		Sleep(50);
 	}
 
 
 	return 0;
 }
-
-
-
-
 
