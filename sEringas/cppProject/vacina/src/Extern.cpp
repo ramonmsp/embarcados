@@ -11,23 +11,26 @@
 
 struct InfoRF {
 	short id;
-	short batimentos;
+	short umidade;
 	short temperatura;
-	bool movimento;
-}infoRF;
+	short luminosidade;
+} info;
 
 Comunicacao com = NULL;
 
-int iniciar(char* porta){
+int iniciar(char* porta) {
 	com = Comunicacao(porta);
 	return com.iniciar();
 }
-int ler(){
+int ler() {
 	int resultado = EXIT_FAILURE;
 	char ci = 0, cf = 0;
-	if (com.ler(&ci, sizeof(ci))){
-		if (com.ler((char*) &infoRF, sizeof(InfoRF)) == 0){
-			if((com.ler(&cf, sizeof(char)) == 0) && (cf == 'F')){
+	resultado = com.ler((char*) &ci, sizeof(ci)); //manda ler e capta o resultado
+	if (resultado == EXIT_SUCCESS && (ci == 'I')) { //se o resultado for sucesso e ele tiver encontrado o i
+		resultado = com.ler((char*) &info, sizeof(info)); //vai ler o conteudo de dados depois do i na estrutura
+		if (resultado == EXIT_SUCCESS) {  //se leu os dados ok
+			resultado = com.ler((char*) &cf, sizeof(cf)); //o resultado sera a leitura do f
+			if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai imprimir
 				resultado = EXIT_SUCCESS;
 			}
 
@@ -35,20 +38,19 @@ int ler(){
 	}
 	return resultado;
 }
-int getId(){
-	return infoRF.id;
+int getId() {
+	return info.id;
 }
-int getBatimentos(){
-	return infoRF.batimentos;
+int getUmidade() {
+	return info.umidade;
 }
-int getTemperatura(){
-	return infoRF.temperatura;
+int getTemperatura() {
+	return info.temperatura;
 }
-int getMovimento(){
-	return infoRF.movimento;
+int getLuminosidade() {
+	return info.luminosidade;
 }
-int finalizar(){
+int finalizar() {
 	return com.finalizar();
 }
-
 

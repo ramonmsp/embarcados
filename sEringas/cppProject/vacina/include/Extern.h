@@ -12,13 +12,13 @@
 extern "C" {
 #endif
 
-	int iniciar(char* porta);
-	int ler();
-	int getId();
-	int getBatimentos();
-	int getTemperatura();
-	int getMovimento();
-	int finalizar();
+int iniciar(char* porta);
+int ler();
+int getId();
+int getUmidade();
+int getTemperatura();
+int getLuminosidade();
+int finalizar();
 
 #ifdef __cplusplus
 }
