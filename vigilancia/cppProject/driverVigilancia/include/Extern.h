@@ -22,8 +22,8 @@ int getGiroX();
 int getGiroY();
 int getGiroZ();
 
-
 int getTap();
+
 
 int finalizar();
 

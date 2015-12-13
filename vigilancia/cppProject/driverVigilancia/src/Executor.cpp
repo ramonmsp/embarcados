@@ -38,6 +38,8 @@ while(true){
 				if (resultado == EXIT_SUCCESS) {  //se leu os dados ok
 					resultado = com.ler((char*) &cf, sizeof(cf)); //o resultado sera a leitura do f
 					if (resultado == EXIT_SUCCESS && (cf == 'F')) { //se leu tudo certinho, vai imprimir
+						if((com.poderLer(eixos.acelX, eixos.acelY, eixos.acelZ))&&
+								(com.poderLer(eixos.gyroX, eixos.gyroY, eixos.gyroZ))){
 						if(flag){
 							com.setPrimeiroAcel(eixos.acelX, eixos.acelY, eixos.acelZ); //pega primeiros valores capturados pelo sensor e coloca como parametro
 							com.setPrimeiroGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ);//pega primeiros valores capturados pelo sensor e coloca como parametro
@@ -47,7 +49,7 @@ while(true){
 
 						//verificar se mexeu ou foi vibrado
 						if((com.verificaAcel(eixos.acelX, eixos.acelY,  eixos.acelZ) == 1)  ||
-								(com.verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ))
+								(com.verificaGiro(eixos.gyroX, eixos.gyroY, eixos.gyroZ) == 1)
 								|| com.getTap(eixos.stateTap)){
 							cout<< "MEXEU"<<endl;
 					}else{
@@ -63,6 +65,7 @@ while(true){
 						}
 					}
 				}
+			}
 			}
 			Sleep(50);//pra n ficar o tempo todo batendo no arduino, ele vai esperar o mesmo tempo q o arduino leva pra enviar
 		}

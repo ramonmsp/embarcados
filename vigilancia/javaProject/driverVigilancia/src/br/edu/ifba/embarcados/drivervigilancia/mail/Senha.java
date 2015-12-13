@@ -2,7 +2,7 @@ package br.edu.ifba.embarcados.drivervigilancia.mail;
 
 public class Senha {
 	private String senha = "embarcados123456";
-	private String email = "embarcados.ifba@gmail.com ";
+	private String email = "embarcados.ifba@gmail.com";
 	
 	
 	

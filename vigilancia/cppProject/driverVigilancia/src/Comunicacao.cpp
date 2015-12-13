@@ -94,49 +94,7 @@ int Comunicacao::finalizar(){
 	return EXIT_SUCCESS;
 }
 
-int Comunicacao::verificaAcel(short x, short y, short z){
-	int saida =0;
-	if((x < primMenorAcelX || x > primMaiorAcelX) ||
-			(y < primMenorAcelY || y > primMaiorAcelY) ||
-			(z < primMenorAcelZ || z > primMaiorAcelZ)){
-		saida = 1;
-	}
-	return saida;
-}
 
-
-int Comunicacao::verificaGiro(short x, short y, short z){
-	int saida =0;
-	if((x < primMenorGiroX || x > primMaiorGiroX) ||
-			(y < primMenorGiroY || y > primMaiorGiroY) ||
-			(z < primMenorGiroZ || z > primMaiorGiroZ)){
-		saida = 1;
-	}
-	return saida;
-
-};
-void Comunicacao::setPrimeiroAcel(short X, short Y, short Z){
-	primMaiorAcelX = X+30;
-	primMaiorAcelY = Y+30;
-	primMaiorAcelZ = Z+30;
-
-	primMenorAcelX = X-30;
-	primMenorAcelY = Y-30;
-	primMenorAcelZ = Z-30;
-};
-
-void Comunicacao::setPrimeiroGiro(short X, short Y, short Z){
-	primMaiorGiroX = X+50;
-	primMaiorGiroY = Y+50;
-	primMaiorGiroZ = Z+50;
-
-	primMenorGiroX = X-50;
-	primMenorGiroY = Y-50;
-	primMenorGiroZ = Z-50;
-};
-bool Comunicacao::getTap(short tap){
-	return !(tap==0);
-}
 
 
 

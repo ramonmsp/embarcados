@@ -7,11 +7,13 @@ public class Executor {
 	public static void main(String[] args) throws InterruptedException {
 		ListenerAcelerometro listener = new ListenerAcelerometro();
 		
-		AsincExec asinc = new AsincExec("/dev/ttyUSB0"); 
+		AsincExec asinc = new AsincExec("/dev/ttyACM0"); 
 		
 		asinc.addListener(listener);
 		
 		Thread t = new Thread(asinc);
+		
+
 		t.start();
 		
 		// FIXME não esta parando a thread (setContinuar(false))

@@ -19,9 +19,9 @@ public class JavaMailApp
             props.put("mail.smtp.socketFactory.port", "465");
             props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
             props.put("mail.smtp.auth", "true");
-            props.put("mail.smtp.port", "465");
-
-            final Senha auth = new Senha();
+            props.put("mail.smtp.port", "465"); 
+            final Senha auth = new Senha();           
+            
             Session session = Session.getDefaultInstance(props,
                         new javax.mail.Authenticator() {
                              protected PasswordAuthentication getPasswordAuthentication()
@@ -40,10 +40,6 @@ public class JavaMailApp
 
                   Address[] toUser = InternetAddress //Destinatário(s)
                              .parse("randlersi@gmail.com, msp.ramon@gmail.com");
-                  /*
-                  Address[] toUser = InternetAddress //Destinatário(s)
-                          .parse("randlersi@gmail.com, msp.ramon@gmail.com");  
-                  */
                   message.setRecipients(Message.RecipientType.TO, toUser);
                   message.setSubject("[EMBARCADOS] Lascou!");//Assunto
                   message.setText("Atenção, você está sendo roubado!");

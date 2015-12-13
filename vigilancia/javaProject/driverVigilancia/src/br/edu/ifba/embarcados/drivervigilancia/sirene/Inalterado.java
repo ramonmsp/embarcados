@@ -14,6 +14,10 @@ import java.awt.event.ActionEvent;
 
 public class Inalterado extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**

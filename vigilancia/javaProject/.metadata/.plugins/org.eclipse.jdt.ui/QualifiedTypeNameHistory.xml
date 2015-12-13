@@ -2,4 +2,5 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.sun.jna.Native"/>
 <fullyQualifiedTypeName name="br.edu.ifba.embarcados.drivervigilancia.conector.IComunicacaoSensores"/>
+<fullyQualifiedTypeName name="br.edu.ifba.embarcados.drivervigilancia.movimento.IMovimento"/>
 </qualifiedTypeNameHistroy>

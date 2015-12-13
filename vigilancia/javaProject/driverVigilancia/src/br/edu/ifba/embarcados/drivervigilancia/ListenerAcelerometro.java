@@ -11,8 +11,8 @@ public class ListenerAcelerometro implements IListenerAcelerometro{
 		System.out.println("Z = " + z);		
 	}
 
-	@Override
-	public void notificarVibração() {
-	}
+//	@Override
+//	public void notificarVibração() {
+//	}
 	
 }

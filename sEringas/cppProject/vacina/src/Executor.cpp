@@ -18,7 +18,7 @@ struct InfoRF {
 
 int main(int argc, char **argv) {
 
-	Comunicacao com("/dev/ttyUSB1");
+	Comunicacao com("/dev/ttyACM0");
 
  	//iniciou a comunicacao
 	if (com.iniciar() == EXIT_SUCCESS) {  //se foi iniciado com sucesso
