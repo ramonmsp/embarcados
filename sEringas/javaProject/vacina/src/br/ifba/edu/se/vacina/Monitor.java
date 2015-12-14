@@ -10,11 +10,13 @@ import org.primefaces.model.chart.MeterGaugeChartModel;
 
 import br.ifba.edu.se.vacina.conector.SingleConector;
 
+
 @ManagedBean(name = "monitor")
 public class Monitor {
 
 	private MeterGaugeChartModel modeloMedidorTemperatura;
-	private MeterGaugeChartModel modeloMedidorBatimentos;
+	private MeterGaugeChartModel modeloMedidorUmidade;
+	private MeterGaugeChartModel modeloMedidorLuminosidade;
 
 	@PostConstruct
 	public void iniciar() {
@@ -26,13 +28,48 @@ public class Monitor {
 		modeloMedidorTemperatura.setTitle("Temperatura");
 		modeloMedidorTemperatura.setGaugeLabel("Graus Celsius");
 
-		modeloMedidorBatimentos = criarModeloBatimentos();
-		modeloMedidorBatimentos.setTitle("Batimentos");
-		modeloMedidorBatimentos.setGaugeLabel("BPM");
+		modeloMedidorUmidade = criarModeloUmidade();
+		modeloMedidorUmidade.setTitle("Umidade");
+		modeloMedidorUmidade.setGaugeLabel("%");
 
+		modeloMedidorLuminosidade = criarModeloLuminosidade();
+		modeloMedidorLuminosidade.setTitle("Luminosidade");
+		modeloMedidorLuminosidade.setGaugeLabel("Lumens");
+	}
+
+
+	public MeterGaugeChartModel getModeloMedidorTemperatura() {
+		return modeloMedidorTemperatura;
+	}
+
+	public MeterGaugeChartModel getModeloMedidorUmidade() {
+		return modeloMedidorUmidade;
+	}
+	
+	public MeterGaugeChartModel getModeloMedidorLuminosidade() {
+		return modeloMedidorLuminosidade;
 	}
 
 	private MeterGaugeChartModel criarModeloTemperatura() {
+		List<Number> marcadores = new ArrayList<Number>();
+		marcadores.add(0);
+		marcadores.add(5);
+		marcadores.add(10);
+		marcadores.add(15);
+		marcadores.add(20);
+		marcadores.add(25);
+		marcadores.add(30);
+		marcadores.add(35);
+		marcadores.add(40);
+		marcadores.add(45);
+		marcadores.add(50);
+
+		return new MeterGaugeChartModel(0, marcadores);
+
+	}
+	
+
+	private MeterGaugeChartModel criarModeloUmidade() {
 		List<Number> marcadores = new ArrayList<Number>();
 		marcadores.add(0);
 		marcadores.add(10);
@@ -40,33 +77,42 @@ public class Monitor {
 		marcadores.add(30);
 		marcadores.add(40);
 		marcadores.add(50);
-
+		marcadores.add(60);
+		marcadores.add(70);
+		marcadores.add(80);
+		marcadores.add(90);
+		marcadores.add(100);
+		
 		return new MeterGaugeChartModel(0, marcadores);
-
 	}
 
-	public MeterGaugeChartModel getModeloMedidorTemperatura() {
-		return modeloMedidorTemperatura;
-	}
-
-	public MeterGaugeChartModel getModeloMedidorBatimentos() {
-		return modeloMedidorBatimentos;
-	}
-
-	private MeterGaugeChartModel criarModeloBatimentos() {
+	private MeterGaugeChartModel criarModeloLuminosidade() {
 		List<Number> marcadores = new ArrayList<Number>();
 		marcadores.add(0);
 		marcadores.add(50);
-		marcadores.add(75);
 		marcadores.add(100);
-		marcadores.add(125);
 		marcadores.add(150);
-		marcadores.add(175);
 		marcadores.add(200);
-
+		marcadores.add(250);
+		marcadores.add(300);
+		marcadores.add(350);
+		marcadores.add(400);
+		marcadores.add(450);
+		marcadores.add(500);
+		marcadores.add(550);
+		marcadores.add(600);
+		marcadores.add(650);
+		marcadores.add(700);
+		marcadores.add(750);
+		marcadores.add(800);
+		marcadores.add(850);
+		marcadores.add(900);
+		marcadores.add(950);
+		marcadores.add(1000);
+		
 		return new MeterGaugeChartModel(0, marcadores);
 	}
-
+	
 	public void lerSensores() {
 		// acionar a leitura do arduino
 		// SingleConector.getConector().ler();
@@ -75,15 +121,13 @@ public class Monitor {
 		Informacao info = SingleConector.getInformacao();
 
 		System.out.println("Temperatura = " + info.getTemperatura());
-		System.out.println("Batimentos = " + info.getBatimentos());
-		System.out.println("Movimentos = " + info.getMovimentos());
+		System.out.println("Luminosidade = " + info.getLuminosidade());
+		System.out.println("Umidade = " + info.getUmidade());
+		//System.out.println("Movimentos = " + info.getMovimentos());
 
 		// // atualizar os valores nos medidores
 		// modeloMedidorTemperatura.setValue(temperatura);
 		// modeloMedidorBatimentos.setValue(batimentos);
 	}
 
-	public boolean getMovimentoDetectado() {
-		return (SingleConector.getConector().getMovimento()) == 1;
-	}
 }

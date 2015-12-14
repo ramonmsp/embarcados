@@ -9,11 +9,11 @@ public interface IComunicacaoRF extends Library {
 
 	public int getId();
 
-	public int getBatimentos();
+	public int getUmidade();
 
 	public int getTemperatura();
 
-	public int getMovimento();
+	public int getLuminosidade();
 
 	public int finalizar();
 }

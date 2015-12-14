@@ -2,32 +2,32 @@ package br.ifba.edu.se.vacina;
 
 public class Informacao {
 
-	private int batimentos;
-	private int movimentos;
+	private int umidade;
+	private int luminosidade;
 	private int temperatura;
-
-	public int getBatimentos() {
-		return batimentos;
+	
+	
+	public int getUmidade() {
+		return umidade;
 	}
-
-	public void setBatimentos(int batimentos) {
-		this.batimentos = batimentos;
+	public void setUmidade(int umidade) {
+		this.umidade = umidade;
 	}
-
-	public int getMovimentos() {
-		return movimentos;
+	public int getLuminosidade() {
+		return luminosidade;
 	}
-
-	public void setMovimentos(int movimentos) {
-		this.movimentos = movimentos;
+	public void setLuminosidade(int luminosidade) {
+		this.luminosidade = luminosidade;
 	}
-
 	public int getTemperatura() {
 		return temperatura;
 	}
-
 	public void setTemperatura(int temperatura) {
 		this.temperatura = temperatura;
 	}
+	
+	
 
+	
+	
 }

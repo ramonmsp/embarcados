@@ -13,16 +13,17 @@
 		<p:chart id="medidorTemperatura" type="metergauge"
 		 model="#{monitor.modeloMedidorTemperatura}"
 		 style="width:400px; height:250px"></p:chart>
-		<p:chart id="medidorBatimentos" type="metergauge" 
-		model="#{monitor.modeloMedidorBatimentos}"
+		 
+		<p:chart id="medidorUmidade" type="metergauge" 
+		model="#{monitor.modeloMedidorUmidade}"
 		style="width:400px; height:250px"></p:chart>
 		
-		<p:outputLabel id="avisoMovimento" value="
-		#{monitor.movimentoDetectado}"></p:outputLabel>
-		
+		<p:chart id="medidorLuminosidade" type="metergauge" 
+		model="#{monitor.modeloMedidorLuminosidade}"
+		style="width:400px; height:250px"></p:chart>
 		
 		<p:poll interval="1" listener="#{monitor.lerSensores}"
-		 update="formMonitor:medidorTemperatura, formMonitor:medidorBatimentos, formMonitor:avisoMovimento"></p:poll>
+		 update="formMonitor:medidorTemperatura, formMonitor:medidorUmidade, formMonitor:medidorLuminosidade"></p:poll>
 	</h:form>
 </h:body>
 </html>

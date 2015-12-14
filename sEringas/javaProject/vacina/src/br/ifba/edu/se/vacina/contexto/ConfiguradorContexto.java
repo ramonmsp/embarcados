@@ -2,11 +2,10 @@ package br.ifba.edu.se.vacina.contexto;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
-
 import br.ifba.edu.se.vacina.conector.SingleConector;
 import br.ifba.edu.se.vacina.leitor.LeitorAssincrono;
-
 import com.sun.faces.config.ConfigureListener;
+
 
 public class ConfiguradorContexto extends ConfigureListener {
 

@@ -36,8 +36,8 @@ public class SingleConector {
 
 		if (resultado == 0) {
 			info.setTemperatura(comRF.getTemperatura());
-			info.setBatimentos(comRF.getBatimentos());
-			info.setMovimentos(comRF.getMovimento());
+			info.setLuminosidade(comRF.getLuminosidade());
+			info.setUmidade(comRF.getUmidade());
 		}
 		semaforo.release();
 		return resultado;
@@ -52,9 +52,9 @@ public class SingleConector {
 
 		for (int i = 0; i < 10; i++) {
 			comRF.ler();
-			System.out.println("dispensando leitura [B/T/M]"
-					+ comRF.getBatimentos() + "/" + comRF.getTemperatura()
-					+ "/" + comRF.getMovimento());
+			System.out.println("dispensando leitura [H/T/L]"
+					+ comRF.getUmidade() + "/" + comRF.getTemperatura()
+					+ "/" + comRF.getLuminosidade());
 
 			try {
 				// segunda unidade 1000
@@ -76,8 +76,8 @@ public class SingleConector {
 			e.printStackTrace();
 		}
 
-		info_.setBatimentos(info.getBatimentos());
-		info_.setMovimentos(info.getMovimentos());
+		info_.setUmidade(info.getUmidade());
+		info_.setLuminosidade(info.getLuminosidade());
 		info_.setTemperatura(info.getTemperatura());
 
 		semaforo.release();
