@@ -7,7 +7,7 @@ import br.ifba.edu.se.vacina.Informacao;
 
 public class SingleConector {
 
-	private static final String PORTA = "/dev/ttyUSB0";
+	private static final String PORTA = "/dev/ttyACM0";
 	private static IComunicacaoRF comRF = null;
 	private static Informacao info;
 
@@ -58,7 +58,7 @@ public class SingleConector {
 
 			try {
 				// segunda unidade 1000
-				Thread.sleep(50);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

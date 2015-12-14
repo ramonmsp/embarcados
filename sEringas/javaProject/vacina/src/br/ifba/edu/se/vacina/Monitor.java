@@ -126,7 +126,9 @@ public class Monitor {
 		//System.out.println("Movimentos = " + info.getMovimentos());
 
 		// // atualizar os valores nos medidores
-		// modeloMedidorTemperatura.setValue(temperatura);
+		 modeloMedidorTemperatura.setValue(info.getTemperatura());
+		 modeloMedidorUmidade.setValue(info.getUmidade());
+		 modeloMedidorLuminosidade.setValue(info.getLuminosidade());
 		// modeloMedidorBatimentos.setValue(batimentos);
 	}
 

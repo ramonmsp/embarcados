@@ -123,7 +123,7 @@ void loop() {
   emitir(info);
 
 
-  delay(50);
+  delay(1000);
 
   //Recepcao de dados
   info = receber();

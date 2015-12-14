@@ -11,10 +11,10 @@ public class FabricaConectores {
 
 		if (Platform.isWindows()) {
 			comRF = (IComunicacaoRF) Native.loadLibrary(libPath
-					+ "/vacina.so", IComunicacaoRF.class);
+					+ "/vacina.dll", IComunicacaoRF.class);
 		} else if (Platform.isLinux()) {
 			comRF = (IComunicacaoRF) Native.loadLibrary(libPath
-					+ "/vacina.dll", IComunicacaoRF.class);
+					+ "/vacina.so", IComunicacaoRF.class);
 		}
 		return comRF;
 	}
