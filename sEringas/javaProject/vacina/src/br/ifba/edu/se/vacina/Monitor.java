@@ -5,8 +5,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.sound.midi.MidiDevice.Info;
 
+import org.primefaces.component.carousel.Carousel;
 import org.primefaces.model.chart.MeterGaugeChartModel;
 
 import br.ifba.edu.se.vacina.conector.SingleConector;
@@ -17,7 +17,13 @@ public class Monitor {
 	private MeterGaugeChartModel modeloMedidorTemperatura;
 	private MeterGaugeChartModel modeloMedidorUmidade;
 	private MeterGaugeChartModel modeloMedidorLuminosidade;
+	private Informacao info = new Informacao();
+	private Carousel carrossel;
 	
+
+	
+	
+
 	@PostConstruct
 	public void iniciar() {
 		configurarMedidores();
@@ -26,7 +32,7 @@ public class Monitor {
 	private void configurarMedidores() {
 		modeloMedidorTemperatura = criarModeloTemperatura();
 		modeloMedidorTemperatura.setTitle("Temperatura");
-		modeloMedidorTemperatura.setGaugeLabel("Graus Celsius");
+		modeloMedidorTemperatura.setGaugeLabel("ºC");
 
 		modeloMedidorUmidade = criarModeloUmidade();
 		modeloMedidorUmidade.setTitle("Umidade");
@@ -51,6 +57,10 @@ public class Monitor {
 
 	private MeterGaugeChartModel criarModeloTemperatura() {
 		List<Number> marcadores = new ArrayList<Number>();
+		marcadores.add(-20);
+		marcadores.add(-15);
+		marcadores.add(-10);
+		marcadores.add(-5);
 		marcadores.add(0);
 		marcadores.add(5);
 		marcadores.add(10);
@@ -59,11 +69,8 @@ public class Monitor {
 		marcadores.add(25);
 		marcadores.add(30);
 		marcadores.add(35);
-		marcadores.add(40);
-		marcadores.add(45);
-		marcadores.add(50);
 
-		return new MeterGaugeChartModel(0, marcadores);
+		return new MeterGaugeChartModel(-20, marcadores);
 
 	}
 
@@ -111,22 +118,36 @@ public class Monitor {
 		return new MeterGaugeChartModel(0, marcadores);
 	}
 
+	public int getTemp() {
+		return SingleConector.getInformacao().getTemperatura();
+	}
 
+	public int getUmid() {
+		return SingleConector.getInformacao().getUmidade();
+	}
 
+	public int getLum() {
+		return SingleConector.getInformacao().getLuminosidade();
+	}
+	public void lerParaTabela() {
+		SingleConector.getInformacao().getLuminosidade();
+		SingleConector.getInformacao().getUmidade();
+		SingleConector.getInformacao().getTemperatura();
+	}
 	public void lerSensores() {
-		
+
 		Informacao info = SingleConector.getInformacao();
-		Carrossel.setInformacao(info);
+
 		System.out.println("Temperatura = " + info.getTemperatura());
 		System.out.println("Luminosidade = " + info.getLuminosidade());
 		System.out.println("Umidade = " + info.getUmidade());
-		
+
 		// // atualizar os valores nos medidores
 		modeloMedidorTemperatura.setValue(info.getTemperatura());
 		modeloMedidorUmidade.setValue(info.getUmidade());
 		modeloMedidorLuminosidade.setValue(info.getLuminosidade());
 		
-		
+
 	}
 
 }

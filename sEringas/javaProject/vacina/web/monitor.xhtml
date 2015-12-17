@@ -5,46 +5,48 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui">
 
-<h:head>
+<h:head style="background-color: #ffffff">
+	<h:outputLabel style="font-size: 100%; text-align: center" value="Monitoramento de Vacinas"/>
 </h:head>
 
-<h:body>
-	<h:form id="formMonitor">
+<h:body style="background-color: #cccccc">
+	<h:form id="formMonitor" style="background-color: #cccccc">
 		<p:chart id="medidorTemperatura" type="metergauge"
-		 model="#{monitor.modeloMedidorTemperatura}"
-		 style="width:400px; height:250px"></p:chart>
-		 
-		<p:chart id="medidorUmidade" type="metergauge" 
-		model="#{monitor.modeloMedidorUmidade}"
-		style="width:400px; height:250px"></p:chart>
-		
-		<p:chart id="medidorLuminosidade" type="metergauge" 
-		model="#{monitor.modeloMedidorLuminosidade}"
-		style="width:400px; height:250px"></p:chart>
-		
-		<p:poll interval="1" listener="#{monitor.lerSensores}"
-		 update="formMonitor:medidorTemperatura, formMonitor:medidorUmidade, formMonitor:medidorLuminosidade"></p:poll>	
-		 
-		 <!-- Carrossel  -->
-		 
-		 <p:carousel value="#{carrossel.informacao}" headerText="Responsive" var="car" itemStyle="text-align:center" responsive="true">
-        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
-  
-            <h:outputText value="Umidade" />
-            <h:outputText value="#{car.umidade}" />
- 
-            <h:outputText value="Temperatura" />
-            <h:outputText value="#{car.temperatura}" />
- 
-            <h:outputText value="Luminosidade" />
-            <h:outputText value="#{car.luminosidade}" />
-        </p:panelGrid>
- 
-        <f:facet name="footer">
-                
-        </f:facet>
-    </p:carousel>
-    
+			model="#{monitor.modeloMedidorTemperatura}"
+			style="width:400px; height:250px; background-color: #cccccc"></p:chart>
+
+		<p:chart id="medidorUmidade" type="metergauge"
+			model="#{monitor.modeloMedidorUmidade}"
+			style="width:400px; height:250px; background-color: #cccccc"></p:chart>
+
+		<p:chart id="medidorLuminosidade" type="metergauge"
+			model="#{monitor.modeloMedidorLuminosidade}"
+			style="width:400px; height:250px; background-color: #cccccc"></p:chart>
+	
+	<p:poll interval="1" listener="#{monitor.lerSensores}"
+			update="formMonitor:medidorTemperatura, formMonitor:medidorUmidade, formMonitor:medidorLuminosidade"></p:poll>
+</h:form>
+<h:form id="formTabela">
+
+		<p:carousel headerText="Responsive" itemStyle="text-align:center"
+			responsive="true">
+			<p:panelGrid columns="1" style="width:100%;margin:10px 0px"
+				columnClasses="label,value" layout="grid"
+				styleClass="ui-panelgrid-blank">
+
+				<p:outputLabel value="Umidade" />
+				<p:outputLabel id="tabelaUmidade" value="#{monitor.umid}" />
+
+				<p:outputLabel value="Temperatura" />
+				<p:outputLabel id="tabelaTemperatura" value="#{monitor.temp}" />
+
+				<p:outputLabel value="Luminosidade" />
+				<p:outputLabel id="tabelaLuminosidade" value="#{monitor.lum}" />
+			</p:panelGrid>
+
+		</p:carousel>
+		<p:poll interval="1" listener="#{monitor.lerParaTabela}"
+			update="formTabela"></p:poll>	
 	</h:form>
 </h:body>
 </html>

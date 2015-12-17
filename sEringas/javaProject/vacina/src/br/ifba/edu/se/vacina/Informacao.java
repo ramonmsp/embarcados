@@ -1,6 +1,5 @@
 package br.ifba.edu.se.vacina;
 
-
 public class Informacao {
 
 	private int umidade;
