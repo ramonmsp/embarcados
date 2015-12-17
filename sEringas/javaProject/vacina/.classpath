@@ -14,12 +14,13 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mojarra_jsf">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mojarra_jsf"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/primefaces">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/primefaces">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jsf">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

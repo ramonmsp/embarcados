@@ -7,7 +7,7 @@ import br.ifba.edu.se.vacina.Informacao;
 
 public class SingleConector {
 
-	private static final String PORTA = "/dev/ttyACM0";
+	private static final String PORTA = "/dev/ttyUSB0";
 	private static IComunicacaoRF comRF = null;
 	private static Informacao info;
 
@@ -43,18 +43,13 @@ public class SingleConector {
 		return resultado;
 	}
 
-	// segunda unidade [sem semaforo]
-	// public static IComunicacaoRF getConector() {
-	// return comRF;
-	// }
-
 	public static void dispensarPrimeirasLeituras() {
 
 		for (int i = 0; i < 10; i++) {
 			comRF.ler();
 			System.out.println("dispensando leitura [H/T/L]"
-					+ comRF.getUmidade() + "/" + comRF.getTemperatura()
-					+ "/" + comRF.getLuminosidade());
+					+ comRF.getUmidade() + "/" + comRF.getTemperatura() + "/"
+					+ comRF.getLuminosidade());
 
 			try {
 				// segunda unidade 1000

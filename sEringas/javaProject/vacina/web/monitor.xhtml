@@ -23,7 +23,28 @@
 		style="width:400px; height:250px"></p:chart>
 		
 		<p:poll interval="1" listener="#{monitor.lerSensores}"
-		 update="formMonitor:medidorTemperatura, formMonitor:medidorUmidade, formMonitor:medidorLuminosidade"></p:poll>
+		 update="formMonitor:medidorTemperatura, formMonitor:medidorUmidade, formMonitor:medidorLuminosidade"></p:poll>	
+		 
+		 <!-- Carrossel  -->
+		 
+		 <p:carousel value="#{carrossel.informacao}" headerText="Responsive" var="car" itemStyle="text-align:center" responsive="true">
+        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+  
+            <h:outputText value="Umidade" />
+            <h:outputText value="#{car.umidade}" />
+ 
+            <h:outputText value="Temperatura" />
+            <h:outputText value="#{car.temperatura}" />
+ 
+            <h:outputText value="Luminosidade" />
+            <h:outputText value="#{car.luminosidade}" />
+        </p:panelGrid>
+ 
+        <f:facet name="footer">
+                
+        </f:facet>
+    </p:carousel>
+    
 	</h:form>
 </h:body>
 </html>

@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
 	Comunicacao com("/dev/ttyUSB0");
 
- 	//iniciou a comunicacao
+	//iniciou a comunicacao
 	if (com.iniciar() == EXIT_SUCCESS) {  //se foi iniciado com sucesso
 		char ci, cf;
 		InfoRF info = { 0 };
@@ -45,7 +45,6 @@ int main(int argc, char **argv) {
 			Sleep(50);
 		}
 	}
-
 
 	return 0;
 }
