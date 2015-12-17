@@ -5,35 +5,48 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui">
 
-<h:head style="background-color: #ffffff">
-	<h:outputLabel style="font-size: 100%; text-align: center" value="Monitoramento de Vacinas"/>
+<h:head>
+	<div style="background-color: #eeeeee">
+		<h1 style="text-align: center;">Monitoramento de Vacinas</h1>
+	</div>
 </h:head>
 
 <h:body style="background-color: #cccccc">
-	<h:form id="formMonitor" style="background-color: #cccccc">
-		<p:chart id="medidorTemperatura" type="metergauge"
-			model="#{monitor.modeloMedidorTemperatura}"
-			style="width:400px; height:250px; background-color: #cccccc"></p:chart>
+	<div class="ui-grid ui-grid-fixed" style="width: 100%">	
+		<div class="ui-grid-row">
+			<h:form id="formMonitor" style="background-color: #cccccc">
+				<div class="ui-grid-col-4">
+					<p:chart id="medidorTemperatura" type="metergauge"
+						model="#{monitor.modeloMedidorTemperatura}"
+						style="width:400px; height:250px; background-color: #cccccc"></p:chart>
+				</div>
+				<div class="ui-grid-col-4">
+					<p:chart id="medidorUmidade" type="metergauge"
+						model="#{monitor.modeloMedidorUmidade}"
+						style="width:400px; height:250px; background-color: #cccccc"></p:chart>
+				</div>
+				<div class="ui-grid-col-4">
+					<p:chart id="medidorLuminosidade" type="metergauge"
+						model="#{monitor.modeloMedidorLuminosidade}"
+						style="width:400px; height:250px; background-color: #cccccc"></p:chart>
+				</div>
 
-		<p:chart id="medidorUmidade" type="metergauge"
-			model="#{monitor.modeloMedidorUmidade}"
-			style="width:400px; height:250px; background-color: #cccccc"></p:chart>
+				<p:poll interval="1" listener="#{monitor.lerSensores}"
+					update="formMonitor:medidorTemperatura, formMonitor:medidorUmidade, formMonitor:medidorLuminosidade"></p:poll>
 
-		<p:chart id="medidorLuminosidade" type="metergauge"
-			model="#{monitor.modeloMedidorLuminosidade}"
-			style="width:400px; height:250px; background-color: #cccccc"></p:chart>
-	
-	<p:poll interval="1" listener="#{monitor.lerSensores}"
-			update="formMonitor:medidorTemperatura, formMonitor:medidorUmidade, formMonitor:medidorLuminosidade"></p:poll>
-</h:form>
-<h:form id="formTabela">
+			</h:form>
+		</div>
+	</div>
 
-		<p:carousel headerText="Responsive" itemStyle="text-align:center"
+	<h:form id="formTabela">
+
+		<p:carousel headerText="Painel" itemStyle="text-align:center"
 			responsive="true">
 			<p:panelGrid columns="1" style="width:100%;margin:10px 0px"
 				columnClasses="label,value" layout="grid"
 				styleClass="ui-panelgrid-blank">
-
+				
+				<p:outputLabel value="Box 1" />
 				<p:outputLabel value="Umidade" />
 				<p:outputLabel id="tabelaUmidade" value="#{monitor.umid}" />
 
@@ -46,7 +59,7 @@
 
 		</p:carousel>
 		<p:poll interval="1" listener="#{monitor.lerParaTabela}"
-			update="formTabela"></p:poll>	
+			update="formTabela"></p:poll>
 	</h:form>
 </h:body>
 </html>
