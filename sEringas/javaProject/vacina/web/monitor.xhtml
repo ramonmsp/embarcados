@@ -15,7 +15,7 @@
 	<div class="ui-grid ui-grid-fixed" style="width: 100%">	
 		<div class="ui-grid-row">
 			<h:form id="formMonitor" style="background-color: #cccccc">
-				<div class="ui-grid-col-4">
+				<div class="ui-grid-col-4" >
 					<p:chart id="medidorTemperatura" type="metergauge"
 						model="#{monitor.modeloMedidorTemperatura}"
 						style="width:400px; height:250px; background-color: #cccccc"></p:chart>
@@ -47,14 +47,11 @@
 				styleClass="ui-panelgrid-blank">
 				
 				<p:outputLabel value="Box 1" />
-				<p:outputLabel value="Umidade" />
-				<p:outputLabel id="tabelaUmidade" value="#{monitor.umid}" />
-
-				<p:outputLabel value="Temperatura" />
-				<p:outputLabel id="tabelaTemperatura" value="#{monitor.temp}" />
-
-				<p:outputLabel value="Luminosidade" />
-				<p:outputLabel id="tabelaLuminosidade" value="#{monitor.lum}" />
+				
+				<p:outputLabel id="tabelaUmidade" value="Umidade: #{monitor.umid} %" />
+				<p:outputLabel id="tabelaTemperatura" value="Temperatura: #{monitor.temp} ºC" />
+				<p:outputLabel id="tabelaLuminosidade" value="Luminosidade: #{monitor.lum} %" />
+			
 			</p:panelGrid>
 
 		</p:carousel>

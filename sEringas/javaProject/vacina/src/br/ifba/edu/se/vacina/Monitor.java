@@ -33,6 +33,8 @@ public class Monitor {
 		modeloMedidorTemperatura = criarModeloTemperatura();
 		modeloMedidorTemperatura.setTitle("Temperatura");
 		modeloMedidorTemperatura.setGaugeLabel("ºC");
+		modeloMedidorTemperatura.setSeriesColors("66cc66,93b75f,E7E658,cc6666");
+        
 
 		modeloMedidorUmidade = criarModeloUmidade();
 		modeloMedidorUmidade.setTitle("Umidade");
@@ -40,7 +42,8 @@ public class Monitor {
 
 		modeloMedidorLuminosidade = criarModeloLuminosidade();
 		modeloMedidorLuminosidade.setTitle("Luminosidade");
-		modeloMedidorLuminosidade.setGaugeLabel("Lumens");
+		modeloMedidorLuminosidade.setGaugeLabel("%");
+		modeloMedidorTemperatura.setMin(-20);
 	}
 
 	public MeterGaugeChartModel getModeloMedidorTemperatura() {
@@ -70,7 +73,7 @@ public class Monitor {
 		marcadores.add(30);
 		marcadores.add(35);
 
-		return new MeterGaugeChartModel(-20, marcadores);
+		return new MeterGaugeChartModel(0, marcadores);
 
 	}
 
@@ -94,26 +97,16 @@ public class Monitor {
 	private MeterGaugeChartModel criarModeloLuminosidade() {
 		List<Number> marcadores = new ArrayList<Number>();
 		marcadores.add(0);
+		marcadores.add(10);
+		marcadores.add(20);
+		marcadores.add(30);
+		marcadores.add(40);
 		marcadores.add(50);
+		marcadores.add(60);
+		marcadores.add(70);
+		marcadores.add(80);
+		marcadores.add(90);
 		marcadores.add(100);
-		marcadores.add(150);
-		marcadores.add(200);
-		marcadores.add(250);
-		marcadores.add(300);
-		marcadores.add(350);
-		marcadores.add(400);
-		marcadores.add(450);
-		marcadores.add(500);
-		marcadores.add(550);
-		marcadores.add(600);
-		marcadores.add(650);
-		marcadores.add(700);
-		marcadores.add(750);
-		marcadores.add(800);
-		marcadores.add(850);
-		marcadores.add(900);
-		marcadores.add(950);
-		marcadores.add(1000);
 
 		return new MeterGaugeChartModel(0, marcadores);
 	}
