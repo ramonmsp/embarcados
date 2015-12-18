@@ -7,7 +7,7 @@ import br.ifba.edu.se.vacina.Informacao;
 
 public class SingleConector {
 
-	private static final String PORTA = "/dev/ttyUSB0";
+	private static final String PORTA = "/dev/ttyACM1";
 	private static IComunicacaoRF comRF = null;
 	private static Informacao info;
 

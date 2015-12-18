@@ -45,6 +45,7 @@ void setup() {
 long lerSensoresRF() {
   
   long ldrValor = analogRead(LDR_PIN); 
+  ldrValor = map(ldrValor, 1023,0,0,100);
   long umidadeValor = dht.readHumidity();
   long temperaturaValor = dht.readTemperature();
 
