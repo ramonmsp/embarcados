@@ -34,7 +34,7 @@ public class Monitor {
 		modeloMedidorTemperatura.setTitle("Temperatura");
 		modeloMedidorTemperatura.setGaugeLabel("ºC");
 		modeloMedidorTemperatura.setSeriesColors("66cc66,93b75f,E7E658,cc6666");
-        
+		modeloMedidorTemperatura.setMin(-10);
 
 		modeloMedidorUmidade = criarModeloUmidade();
 		modeloMedidorUmidade.setTitle("Umidade");
@@ -43,7 +43,7 @@ public class Monitor {
 		modeloMedidorLuminosidade = criarModeloLuminosidade();
 		modeloMedidorLuminosidade.setTitle("Luminosidade");
 		modeloMedidorLuminosidade.setGaugeLabel("%");
-		modeloMedidorTemperatura.setMin(-20);
+		
 	}
 
 	public MeterGaugeChartModel getModeloMedidorTemperatura() {
@@ -60,8 +60,6 @@ public class Monitor {
 
 	private MeterGaugeChartModel criarModeloTemperatura() {
 		List<Number> marcadores = new ArrayList<Number>();
-		marcadores.add(-20);
-		marcadores.add(-15);
 		marcadores.add(-10);
 		marcadores.add(-5);
 		marcadores.add(0);
