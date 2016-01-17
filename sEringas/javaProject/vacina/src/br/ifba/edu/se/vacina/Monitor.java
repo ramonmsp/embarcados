@@ -70,6 +70,8 @@ public class Monitor {
 		marcadores.add(25);
 		marcadores.add(30);
 		marcadores.add(35);
+		marcadores.add(40);
+		marcadores.add(45);
 
 		return new MeterGaugeChartModel(0, marcadores);
 
