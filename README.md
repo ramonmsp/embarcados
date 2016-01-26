@@ -42,7 +42,7 @@ Previsto como as informações serão agrupadas em número(s) longo(s) para tran
 # III unidade
 
 **SISTEMA DE MONITORAMENTO DE VACINAS →**consiste na adaptação da automação embarcada desenvolvida na UNIDADE II <br> 
-de forma que ela adquira características de solução de software para a WEB DAS **COISAS**<br>
+de forma que ela adquira características de solução de software para a **WEB DAS COISAS**<br>
 
 * Deverá ser desenvolvido um SERVIÇO WEB RESTful (utilizando a linguagem JAVA e a API Jersey) <br>
 sobre uma instância de servidor TOMCAT. O Serviço Web deve estar integrado ao Driver de forma que<br>
