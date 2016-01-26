@@ -51,13 +51,13 @@ consiga obter as últimas informações lidas a partir dos sensores;<br>
 **O DRIVER deve conter as seguintes características:** <br>
 * (i) ele deve ser capaz de ser iniciado e finalizado por um script de linha de comando (INIT.D);<br> 
 * (ii) ele deve ser capaz de se comunicar com o Serviço Web através de um arquivo PIPE;<br>
-* Deve ser possível testar todas as saídas de dados do Serviço Web através de um Browser;<br>
+* (iii)Deve ser possível testar todas as saídas de dados do Serviço Web através de um Browser;<br>
 
 **O Serviço Web deve ser capaz de fornecer para aplicações-cliente:** 
 * (i) os dados lidos dos sensores na forma como são repassados pelo driver;<br>
 * (ii) diagnósticos sobre os dados lidos dos sensores <br>
 
-**Criação de um Cliente de consumo das informações lidas a partir do Serviço Web**
+**Criação de um Cliente de consumo das informações lidas a partir do Serviço Web**<br>
 Este cliente deve utilizar o Serviço Web para exibir os valores (dos sensores) lidos e os diagnósticos realizados na forma<br>
 de uma Aplicação Web gráfica. Idealmente, pode ser realizada a adaptação do Software Web desenvolvido na Unidade II<br>
 para que ele se torne cliente do Serviço Web;<br>
@@ -65,8 +65,8 @@ para que ele se torne cliente do Serviço Web;<br>
 --------------------------------------------------------
 
 #Projeto 
-**Iunidade**<br>
-![alt tag]()
+**I unidade**<br>
+
 **II unidade**<br>
 ![alt tag](https://github.com/ramonmsp/embarcados/blob/master/Vacina_image.jpg)
 
