@@ -5,7 +5,7 @@
  *      Author: ramonmaciel
  */
 
-#include "Comunicacao.h"
+#include "../includes/comunicacao.h"
 #ifdef __linux__
 #include <stdio.h>
 #include <fcntl.h>

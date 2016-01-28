@@ -21,14 +21,18 @@
 #include <string.h>
 #include <signal.h>
 
+#include "../includes/comunicacao.h"
 
 using namespace std;
 
-#define ARQUIVO_LOG "/home/randler/arquivos_initid/sensoriamento.log"
-#define ARQUIVO_PIPE "/home/randler/arquivos_initid/sensoriamento_p"
+#define ARQUIVO_LOG 	"/home/randler/arquivos_initid/sensoriamento.log"
+#define ARQUIVO_PIPE 	"/home/randler/arquivos_initid/sensoriamento_p"
+#define PORTA			"/dev/ttyACM2"
 
 bool continuar = true;
 int sensores = 0;
+
+Comunicacao com = NULL;
 
 //------------------------------------------ DAEMONIZE ---------------------------------------------------
 
@@ -117,11 +121,18 @@ int enviarParaPipe(int sensores) {
 
 // ----------------------------------------- LER SENSORES -----------------------------
 int lerSensores() {
-	//substituir pela captura de informaçcos do arduino
-	sensores++;
 
+	int sensores = -1;
+		char ci = 0, cf = 0;
 
-
+		if ((com.ler(&ci,sizeof(char)) == 0) && (ci == 'I')) {
+			int is = 0;
+			if (com.ler((char*) &is, sizeof(is)) == 0) {
+				if ((com.ler(&cf,sizeof(char)) == 0) && (cf == 'F')) {
+					 sensores = is;
+				}
+			}
+		}
 
 	return sensores;
 }
@@ -168,11 +179,21 @@ int main(int arg, char* argv[]) {
 		ofstream log(ARQUIVO_LOG, ios_base::out | ios_base::app);
 		log << "Arquivo de log iniciado!" << endl;
 
+
+		//inicia comunicacao com o arduino
+		com = Comunicacao(PORTA);
+		if(com.iniciar() != 0){
+			log << "Falha de inicializacao da comunicacao com sensores" << endl;
+			exit(1);
+		}
+
 		log << "Pipe sendo criado" << endl;
 		if(!pipeIniciado()){
 			log << "Falha na inicializacao do PIPE" << endl;
-			exit(1);
+			exit(2);
 		}
+
+
 
 		// executa em loop interrompivel...
 		continuar = true;
@@ -180,7 +201,7 @@ int main(int arg, char* argv[]) {
 			// ... a leitura dos sensores
 			int sensores = lerSensores();
 
-			log << "Enviando sensores" << sensores << endl;
+			log << "Enviando sensores: " << sensores << endl;
 
 			// ... e o envio para o PIPE
 			enviarParaPipe(sensores);
@@ -190,6 +211,9 @@ int main(int arg, char* argv[]) {
 
 		// remove o arquivo de PIPE apos uso/finalizacao
 		unlink(ARQUIVO_PIPE);
+
+		//finaliza a comunicacao com o arduino
+		com.finalizar();
 
 		log << "Daemon de sensoriamento finaliado" << endl;
 	}

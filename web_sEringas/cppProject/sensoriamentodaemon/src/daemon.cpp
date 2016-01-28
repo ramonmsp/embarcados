@@ -25,9 +25,9 @@
 
 using namespace std;
 
-#define ARQUIVO_LOG 	"/home/ramonmaciel/sensoriamento.log"
-#define ARQUIVO_PIPE 	"/home/ramonmaciel/sensoriamento_p"
-#define PORTA 		 	"/dev/ttyUSB0"
+#define ARQUIVO_LOG 	"/home/randler/arquivos_initid/sensoriamento.log"
+#define ARQUIVO_PIPE 	"/home/randler/arquivos_initid/sensoriamento_p"
+#define PORTA 		 	"/dev/ttyACM0"
 
 bool continuar = true;
 int sensores = 0;
@@ -177,7 +177,7 @@ int main(int arg, char* argv[]) {
 		log << "Arquivo de log iniciado!" << endl;
 
 		// inicio de comunicacao com o arduino
-		com = Comunicacao("/dev/ttyUSB0");
+		com = Comunicacao(PORTA);
 		if (com.iniciar() != 0) {
 			log << "Falha na inicialização dos sensores" << endl;
 			exit(1);
