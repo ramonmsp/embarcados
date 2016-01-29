@@ -27,7 +27,7 @@ using namespace std;
 
 #define ARQUIVO_LOG 	"/home/randler/arquivos_initid/sensoriamento.log"
 #define ARQUIVO_PIPE 	"/home/randler/arquivos_initid/sensoriamento_p"
-#define PORTA			"/dev/ttyACM2"
+#define PORTA			"/dev/ttyACM0"
 
 bool continuar = true;
 int sensores = 0;

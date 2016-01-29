@@ -2,7 +2,7 @@
 #
 # Daemon Name: sensoriamentod
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DPATH=/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA_VI_semestre/Sistemas_Embarcados_Optativa/Projetos_Embarcados/ProjetosCpp/III_unidade/sensoriamentod/Release
+DPATH=/home/randler/MEGA/MEGAsync/IFBA/IFBA/IFBA_VI_semestre/Sistemas_Embarcados_Optativa/Projetos_do_Git_Embarcados/embarcados/web_sEringas/cppProject/sensoriamentod/Release
 DESC="Daemon de leitura dos sensores para WOT"
 NAME=sensoriamentod
 DAEMON=$DPATH/$NAME
